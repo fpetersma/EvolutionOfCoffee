@@ -58,6 +58,7 @@ When moving the mouse over the a specific country, this company will highlight/p
 - Lex Wenneker (owner Espressobus, co-owner Headfirst Coffee Roasters, Barista Champion Netherlands 2015), http://headfirstcoffeeroasters.com/
 - Sebastiaan Gerstdorfer (barista and roaster @Espressofabriek, previously @Coffeecompany Branderij), https://www.coffeecompany.nl/locations/zeeburgerpad-1/
 - Felix Petersma (= me) (barista @ Espressofabriek, previously @Coffeecompany)
+- Mitchell Calmao Baptista (barista and co-owner @Daltons coffee & barista @Espressofabriek, previously @Ristretto London)
 - ...
 
 ##### Websites
