@@ -72,3 +72,5 @@ When moving the mouse over the a specific country, this company will highlight/p
 - ...
 
 ## Sketches
+
+IMAGES/IMG_7013.jpg
