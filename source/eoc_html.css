@@ -1,0 +1,21 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 1200px;
+	height: 2000px;
+	font-family: Gill Sans, sans-serif;
+/*	font-family: Century Gothic, sans-serif;*/
+/*	font-family: Lucida Console, Monaco, monospace;*/
+	color: #C0FFEE;
+	background: #000000;
+	margin: 0;
+	padding: 0;
+}
+header h1 {
+
+}
+header h2 {
+
+}

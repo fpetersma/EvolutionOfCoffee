@@ -1,0 +1,14 @@
+#titlerect {
+	width: 600px;
+	height: 150px;
+
+}
+
+.background-rect {
+	color: brown;
+}
+
+#sometext {
+	font-family: Gill Sans, sans-serif;;
+	color: #C0FFEE;
+}
