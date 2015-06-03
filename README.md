@@ -52,7 +52,7 @@ Initialised by Starbucks around 1990, more and more companies started direct-tra
 
 *when moving over the US* Although Starbucks was, and still is, by far the biggest player in the specialty coffee, they did remain focussed on espresso-based coffees, especially the flavoured and frozen specials, instead of also joining the renewed interest in filter coffees. This left room for smaller business to fill this market, of which some by now have grown to chains themselves, such as Intelligentsia Coffee in Chicago and Blue Bottle Coffee in Oakland. Typical for the American coffee culture are the large pots or tanks of filtercoffee from which you can pull your own cup of coffee, and the usually very large sizes. Also, in 1982, the Specialty Coffee Association of America was founded, and they were the first to create a grading scheme to decide on whether a particular coffee was a 'specialty coffee'. 
 
-*when moving over the Western Europe (NL, BE, DE, GB)*
+*when moving over the Western Europe (NL, BE, DE, GB)* 
 
 *when moving over the Scandinavia(DK, SE, NO)* All of Scandinavia has been very active in the third coffee wave. Typical for the 'Scandinavian' or 'Nordic' roast is that it is in general a very light roast, were filtercoffee beans are barely being roasted after the 'the first crack'. This is the moment in the roasting process where the first gasses escape from beans, thereby causing them to, quite literally, crack. 
 
@@ -61,6 +61,10 @@ Initialised by Starbucks around 1990, more and more companies started direct-tra
 *when moving over the Japan*
 
 *statistics* coffee trade, brands (la marzocco, synesso, starbucks, peet's coffee). 
+
+#### Fourth coffee wave
+
+- Lots of individual roasteries with a small bar, distinguish yourself not only by what beans you buy and how you make your coffee, but also by roasting it yourself, thereby having even more control over the flavour of the coffee that is being served. Also, more championships are being created, such as the Aeropress World Championship. What is also new in this wave is the focus on making customers and other parties in the hospilaty industry use the individually roasted specialty coffees at home or in their cafe/bar/hotel/restaurant, not just drink them at the coffee bars. This involves not only selling the coffee, but also teaching about the different techniques used to create that particular coffee, but more important, what techniques are required to extract a proper cup of coffee. In the fourth wave, it is not just about creating the 'best' coffee; it is about exploring all the different flavours that are available, what different roasts do to different coffee beans, what extraction techniques result in what flavours, and sharing this knowledge with the rest of the world, not just with the coffee 'elite'.
 
 ### Sources
 
@@ -91,7 +95,7 @@ Initialised by Starbucks around 1990, more and more companies started direct-tra
 - 'SCAA', http://en.wikipedia.org/wiki/Specialty_Coffee_Association_of_America
 - 'Blue Bottle Coffee', https://bluebottlecoffee.com/
 - 'Intelligentsia Coffee', http://www.intelligentsiacoffee.com/
-- 
+- 'CoffeaArabica 02' by Elcambur - Own work, Licensed under CC BY 3.0 via Wikimedia Commons, http://commons.wikimedia.org/wiki/File:CoffeaArabica_02.jpg#/media/File:CoffeaArabica_02.jpg
 - ...
 
 ## Sketches

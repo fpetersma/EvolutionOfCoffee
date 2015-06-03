@@ -14,3 +14,4 @@ by: Felix Petersma
 
 ## 06.03.2015
 
+- Continued working on the text content in README.md.
