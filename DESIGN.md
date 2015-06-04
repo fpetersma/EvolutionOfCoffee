@@ -4,7 +4,10 @@ As a basis for my design, I will use bootstrap for creating rows and dividing th
 
 Apart for my HTML-file, I will use 5 other files of coding:
 - Firstly, my own Javascript file. This piece of code will consist mainl of a single function, InitVis(). In this function, I will first create a bunch of variables and constant, needed for the creation of the maps. After that, I will load world-50m.json using d3 and TopoJSON, and create several maps. Using d3, I will also use the mouseover and mouseclick event listeners to create the interactivity. Lastly, I will create the tooltips, showing information on the specific country. 
-The general text e
+The idea is that the user will have to choose one of four 'waves'. These will be represented by small maps with text. In these maps, the relevant countries for that wave have already been highlighted. When one of those maps is clicked, the bigger map on the bottom will become the same as the smaller map, and the countries that were highlighted will also here be highlighted. But when moving over those countries, they will light up (by change the colour of that countries and creating a very thick border of the same colour), and one or more tooltips will pop up. 
+At this moment, my idea is to already create all the general info texts, and only make them visible when the relevant wave has been selected. The text elements for the tooltip will be put in an array, and only one tooltip will be created. This tooltip will change location upon a specific mouseover, and the content will change as well. 
+
+All together, when clicking from wave to wave, this visualisation should tell the story of the evolution of coffee, in all his glory. I will also add references to several sources I have used, thereby giving credit where credit due. 
 - The d3 Javascript file.
 - The TopoJSON Javascript file.
 - The CSS file for my HTML. Here I will make some general styling decisions, such as the default font and background colour. All very basic.
