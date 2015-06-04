@@ -101,4 +101,4 @@ Initialised by Starbucks around 1990, more and more companies started direct-tra
 
 ## Sketches
 
-![sketch1](IMAGES/IMG_7013.jpg)
+![sketch1](docs/IMG_7013.jpg)

@@ -45,4 +45,4 @@ The general text e
 
 
 ### User Interface
-![UI](docs/UI 2015-06-04 at 17.06.09 pm)
+![UI](docs/UI 2015-06-04 at 17.06.09 pm.png)
