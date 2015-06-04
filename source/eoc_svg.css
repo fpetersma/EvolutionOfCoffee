@@ -1,14 +1,40 @@
-#titlerect {
-	width: 600px;
-	height: 150px;
-
-}
-
-.background-rect {
-	color: brown;
-}
-
 #sometext {
-	font-family: Gill Sans, sans-serif;;
+	font-family: Gill Sans, sans-serif;
 	color: #C0FFEE;
+}
+.wave {
+	background-color: #c0ffee;
+}
+.graticule {
+	fill: none;
+}
+#map .graticule {
+	stroke: #333333;
+	stroke-width: .1px;
+	stroke-opacity: .5;	
+}
+.subunit {
+	fill: #444444;
+}
+.boundary{
+	fill: none;
+}
+#map .boundary {
+	stroke: #c0ffee;
+	stroke-width: 1px;
+}
+#first-wave .code528, #first-wave .code250, #first-wave .code682, #first-wave .code512, #first-wave .code784, #first-wave .code887, #first-wave .code231, #first-wave .code368 {
+	fill: #8c510a;
+}
+
+#second-wave .code380, #second-wave .code840 {
+	fill: #8c510a;
+}
+
+#third-wave .code276, #third-wave .code752, #third-wave .code578, #third-wave .code246, #third-wave .code826, #third-wave .code208, #third-wave .code528, #third-wave .code840, #third-wave .code36, #third-wave .code392 {
+	fill: #8c510a;
+} 
+
+#fourth-wave .subunit {
+	fill: #8c510a;
 }

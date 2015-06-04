@@ -8,8 +8,8 @@ body {
 	font-family: Gill Sans, sans-serif;
 /*	font-family: Century Gothic, sans-serif;*/
 /*	font-family: Lucida Console, Monaco, monospace;*/
-	color: #C0FFEE;
-	background: #000000;
+	color: #333333;
+	background: #EBE0CC;
 	margin: 0;
 	padding: 0;
 }
@@ -18,4 +18,7 @@ header h1 {
 }
 header h2 {
 
+}
+#waves {
+	min-width: 1200px;
 }

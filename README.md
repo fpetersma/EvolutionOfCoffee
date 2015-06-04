@@ -32,7 +32,7 @@ When moving the mouse over the a specific country, this company will highlight/p
 
 *statistics*
 
-#### Second coffee wave (1950 - 1980)
+#### Second coffee wave (1950 - 1990)
 
 **The Start of the Second wave** 
 
@@ -52,13 +52,13 @@ Initialised by Starbucks around 1990, more and more companies started direct-tra
 
 *when moving over the US* Although Starbucks was, and still is, by far the biggest player in the specialty coffee, they did remain focussed on espresso-based coffees, especially the flavoured and frozen specials, instead of also joining the renewed interest in filter coffees. This left room for smaller business to fill this market, of which some by now have grown to chains themselves, such as Intelligentsia Coffee in Chicago and Blue Bottle Coffee in Oakland. Typical for the American coffee culture are the large pots or tanks of filtercoffee from which you can pull your own cup of coffee, and the usually very large sizes. Also, in 1982, the Specialty Coffee Association of America was founded, and they were the first to create a grading scheme to decide on whether a particular coffee was a 'specialty coffee'. 
 
-*when moving over the Western Europe (NL, BE, DE, GB)* 
+*when moving over the Western Europe (NL, BE, DE, GB)* A very experimental coffee culture, similar to the Scandinavian culture. Some people use more Australian roasts, some use more Scandinavian roasts, although the main trend lies more towards the lighter, Nordic roasts. The coffee culture is in a very developed stadium here. Every (major) city has lots of coffeehouses, and there are different kind of places for different needs; from small roasteries with a unique single origin from Rwanda to large chains such as Starbucks. There is a huge focus on quality and consistency; there are places, mainly in London, where they weight every shot of espresso (in and out) that they make. 
 
 *when moving over the Scandinavia(DK, SE, NO)* All of Scandinavia has been very active in the third coffee wave. Typical for the 'Scandinavian' or 'Nordic' roast is that it is in general a very light roast, were filtercoffee beans are barely being roasted after the 'the first crack'. This is the moment in the roasting process where the first gasses escape from beans, thereby causing them to, quite literally, crack. 
 
-*when moving over the Australia* Australia is the country were they 'invented' the flat white; an espresso-based beverage, similar to latte, but with less milk, thus having a espresso-to-milk ratio somewhere between a latte and a cortado. Where 
+*when moving over the Australia* Australia is the country were they 'invented' the flat white; an espresso-based beverage, similar to latte, but with less milk, thus having a espresso-to-milk ratio somewhere between a latte and a cortado. Where the American coffee culture focuses on large amounts of coffee, the Australian coffee culture focusses on single, smaller cups of coffee, making one coffee at the time. In this way this culture is similar to the European culture, although the Australians tend to using darker roasts, especially compared to Scaninavia.
 
-*when moving over the Japan*
+*when moving over the Japan* Although Japan's coffee culture has existed since a Dutch man brought it to Nagasaki in the 19th century, it did not really boom until the 1970's. Since then, it has grown explosively, with lots of coffeehouses being opened. Too of the biggest players in the filter coffee market, Hario and Kalita, originate from Japan. 
 
 *statistics* coffee trade, brands (la marzocco, synesso, starbucks, peet's coffee). 
 
@@ -96,6 +96,7 @@ Initialised by Starbucks around 1990, more and more companies started direct-tra
 - 'Blue Bottle Coffee', https://bluebottlecoffee.com/
 - 'Intelligentsia Coffee', http://www.intelligentsiacoffee.com/
 - 'CoffeaArabica 02' by Elcambur - Own work, Licensed under CC BY 3.0 via Wikimedia Commons, http://commons.wikimedia.org/wiki/File:CoffeaArabica_02.jpg#/media/File:CoffeaArabica_02.jpg
+- 'Japan's coffee culture', http://www.japantoday.com/category/opinions/view/japans-coffee-culture
 - ...
 
 ## Sketches
