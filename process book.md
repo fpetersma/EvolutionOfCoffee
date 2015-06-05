@@ -24,3 +24,6 @@ Today:
 - I will be working on implementing the maps in the code. 
 - I will try to use bootstrap after all, due to its design capabilities
 - Decided to go for a sort light brown-ish colour scheme, will probably use colorbrewer2.org to acquire a proper colour scheme
+
+- I have finally managed to implement the maps using topojson. I was a bit of a hassle to create all the different paths for all the different countries, but in the end it all worked out.  The first layout is not completed, and the next step is to start working on the interactivity. The rest of the layout will be dealt with in a later stadium. For now, I decided on leaving the background of the maps transparant, thereby letting them blend into the visualisation. 
+- The four main text elements will all be written at the same spot, and I will only make one visible every time it gets clicked. I hope this is going to work. 
