@@ -182,8 +182,8 @@ function InitVis() {
 
 		// when clicking first wave
 		firstWave.on('click', function() {
-			mainMap.attr('class', 'wave first-wave')
-			d3.select('#generalInfo').text(mainTexts.first)
+			mainMap.attr('class', 'wave first-wave');
+			d3.select('.main-info').attr('visibility', 'visible')
 		});
 
 		// when clicking second wave

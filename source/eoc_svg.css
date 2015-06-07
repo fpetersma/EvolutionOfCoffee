@@ -37,3 +37,18 @@
 .fourth-wave .subunit {
 	fill: #8c510a;
 }
+
+.text-1, .text-2, .text-3, .text-4 {
+	top: 20%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+/*.main-info {
+	visibility: hidden;
+}*/
+.main-info-box {
+	height: 200px;
+}

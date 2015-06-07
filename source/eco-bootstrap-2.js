@@ -4,33 +4,6 @@
 
 'use strict';
 
-/*!
- * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-});
-
-// Highlight the top nav as scrolling occurs
-$('body').scrollspy({
-    target: '.navbar-fixed-top'
-})
-
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});
-
 InitVis();
 
 function InitVis() {
@@ -206,26 +179,39 @@ function InitVis() {
 			.attr('d', pathSmall);
 
 		// start the interactivity
+		d3.select('.main-info').attr('opacity', 1)
 
 		// when clicking first wave
 		firstWave.on('click', function() {
-			mainMap.attr('class', 'wave first-wave')
-			d3.select('#generalInfo').text(mainTexts.first)
+			mainMap.attr('class', 'wave first-wave');
+			d3.select('.main-info').attr('opacity', 1);
+			d3.select('.text-1').attr('opacity', 0);
 		});
 
 		// when clicking second wave
 		secondWave.on('click', function() {
 			mainMap.attr('class', 'wave second-wave')
+			// d3.select('.main-info').style('visibility', 'hidden')
+			d3.select('.text-2').style('visibility', 'visible')			
 		});
 
 		// when clicking third wave
 		thirdWave.on('click', function() {
 			mainMap.attr('class', 'wave third-wave')
+			d3.select('.main-info').style('visibility', 'hidden')
+			d3.select('.text-3').style('visibility', 'visible')
 		});
 
 		// when click fourth wave
 		fourthWave.on('click', function() {
 			mainMap.attr('class', 'wave fourth-wave')
+			d3.select('.main-info').style('visibility', 'hidden')
+			d3.select('.text-4').style('visibility', 'visible')
+		});
+
+		// do something on mouseover France
+		d3.select('.code250').on('mouseover', function() {
+			console.log('ole');
 		});
 	});
 };
