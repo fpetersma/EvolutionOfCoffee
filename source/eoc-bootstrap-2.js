@@ -69,7 +69,15 @@ function InitVis() {
 	    pathSmall = d3.geo.path()
 	    .projection(projectionSmall);
 
+	var toolTip = mainMap.append('div')
+		.attr('class', 'tooltip')
+		.style('opacity', 0.8)
+		.style('display', 'none');
+
 	var graticule = d3.geo.graticule();
+
+	// variable for the main information on the period
+	var mainInfo = d3.selectAll('.main-info');
 
 	// load the json data of the world map
 	d3.json('world-50m.json', function(error, world) {
@@ -81,12 +89,6 @@ function InitVis() {
 		    .datum(graticule)
 		    .attr('class', 'graticule')
 		    .attr('d', pathLarge);
-
-		// create the land
-	  	// mainMap.insert('path')
-	   //  	.datum(topojson.feature(world, world.objects.land))
-	   //  	.attr('class', 'land')
-	   //  	.attr('d', pathLarge)
 
 	    // create the (inner) boundaries
 	  	mainMap.insert('path')
@@ -182,23 +184,275 @@ function InitVis() {
 
 		// when clicking first wave
 		firstWave.on('click', function() {
-			mainMap.attr('class', 'wave first-wave')
-			d3.select('#generalInfo').text(mainTexts.first)
+			mainMap.attr('class', 'wave first-wave');
+			mainInfo.style('display', 'none');
+			d3.select('.text-1').style('display', 'block');
 		});
 
 		// when clicking second wave
 		secondWave.on('click', function() {
 			mainMap.attr('class', 'wave second-wave')
+			mainInfo.style('display', 'none');
+			d3.select('.text-2').style('display', 'block');	
 		});
 
 		// when clicking third wave
 		thirdWave.on('click', function() {
 			mainMap.attr('class', 'wave third-wave')
+			mainInfo.style('display', 'none');
+			d3.select('.text-3').style('display', 'block');
 		});
 
 		// when click fourth wave
 		fourthWave.on('click', function() {
 			mainMap.attr('class', 'wave fourth-wave')
+			mainInfo.style('display', 'none');
+			d3.select('.text-4').style('display', 'block');
 		});
+
+		// selection paths to all the countries
+		var france = mainMap.select('.code250'),
+			netherlands = mainMap.select('.code528'),
+			dutchColonies = mainMap.select('.code360'),
+			ethiopia = mainMap.select('.code231'),
+			saoudiArabia = mainMap.select('.code682'),
+			unitedArabEmirates = mainMap.select('.code784'),
+			oman = mainMap.select('.code512'),
+			yemen = mainMap.select('.code887'),
+
+			unitedStates = mainMap.select('.code840'),
+			italy = mainMap.select('.code380'),
+
+			japan = mainMap.select('.code392'),
+			norway = mainMap.select('.code578'),
+			finland = mainMap.select('.code246'),
+			sweden = mainMap.select('.code752'),
+			denmark = mainMap.select('.code208'),
+			greatBritain = mainMap.select('.code826'),
+			belgium = mainMap.select('.code56'),
+			germany = mainMap.select('.code276'),
+			australia = mainMap.selectAll('.code36');
+			
+
+		// do something on mouseover france
+		france.on('mouseover', function() {
+			if (mainMap.attr('class') == 'wave first-wave') {
+				france
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				toolTip
+					.style('visibility', 'block')
+			};
+		});
+		france.on('mouseout', function() {
+			france.style('stroke', null);
+		});
+
+		// do something on mouseover united states
+		unitedStates.on('mouseover', function() {
+			if (mainMap.attr('class') == 'wave second-wave') {
+				unitedStates
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+			};
+			if (mainMap.attr('class') == 'wave third-wave') {
+				unitedStates
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+			}
+		});
+		unitedStates.on('mouseout', function() {
+			unitedStates.style('stroke', null);
+		});
+
+		// do something on mouseover italy
+		italy.on('mouseover', function() {
+			if (mainMap.attr('class') == 'wave second-wave') {
+				italy
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+			};
+		});
+		italy.on('mouseout', function() {
+			italy.style('stroke', null);
+		});
+
+		// do something on mouseover japan
+		japan.on('mouseover', function() {
+			if (mainMap.attr('class') == 'wave third-wave') {
+				japan
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+			};
+		});
+		japan.on('mouseout', function() {
+			japan.style('stroke', null);
+		});
+
+		// do something on mouseover australia
+		australia.on('mouseover', function() {
+			if (mainMap.attr('class') == 'wave third-wave') {
+				australia
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+			};
+		});
+		australia.on('mouseout', function() {
+			australia.style('stroke', null);
+		});
+
+		// functions for moving over arabian peninsula
+		function colourArabPeninsula() {
+			if (mainMap.attr('class') == 'wave first-wave') {
+				ethiopia
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				yemen
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				saoudiArabia
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				oman
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				unitedArabEmirates
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+			};
+		}
+		function resetArabPeninsula() {
+			ethiopia.style('stroke', null);
+			yemen.style('stroke', null);
+			saoudiArabia.style('stroke', null);
+			oman.style('stroke', null);
+			unitedArabEmirates.style('stroke', null);
+
+		}
+
+		// do something on mouseover arabian peninsula and ethiopia
+		ethiopia.on('mouseover', colourArabPeninsula);
+		ethiopia.on('mouseout', resetArabPeninsula);
+
+		yemen.on('mouseover', colourArabPeninsula);
+		yemen.on('mouseout', resetArabPeninsula);
+
+		saoudiArabia.on('mouseover', colourArabPeninsula);
+		saoudiArabia.on('mouseout', resetArabPeninsula);
+
+		oman.on('mouseover', colourArabPeninsula);
+		oman.on('mouseout', resetArabPeninsula);
+
+		unitedArabEmirates.on('mouseover', colourArabPeninsula);
+		unitedArabEmirates.on('mouseout', resetArabPeninsula);
+
+		// function for moving over scandinavia
+		function colourScandinavia() {
+			if (mainMap.attr('class') == 'wave third-wave') {
+				sweden
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				norway
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				denmark
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				finland
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+			};
+		}
+		function resetScandinavia() {
+			norway.style('stroke', null);
+			sweden.style('stroke', null);
+			denmark.style('stroke', null);
+			finland.style('stroke', null);
+		}
+
+		// do something on mouseover scandinavia
+		sweden.on('mouseover', colourScandinavia);
+		sweden.on('mouseout', resetScandinavia);
+
+		norway.on('mouseover', colourScandinavia);
+		norway.on('mouseout', resetScandinavia);
+
+		denmark.on('mouseover', colourScandinavia);
+		denmark.on('mouseout', resetScandinavia);
+
+		finland.on('mouseover', colourScandinavia);
+		finland.on('mouseout', resetScandinavia);
+
+		// function for moving over western europe
+		function colourWesternEurope() {
+			if (mainMap.attr('class') == 'wave third-wave') {
+				netherlands
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				germany
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				belgium
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				greatBritain
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+			};
+		};
+
+		function resetWesternEurope() {
+			netherlands.style('stroke', null);
+			greatBritain.style('stroke', null);
+			germany.style('stroke', null);
+			belgium.style('stroke', null);
+		};
+
+
+		// do something on mouseover western europe
+		netherlands.on('mouseover', function() {
+			colourWesternEurope;
+			if (mainMap.attr('class') == 'wave first-wave') {
+				netherlands
+					.style('stroke', '#8c510a')
+					.style('stroke-width', '2px');
+				toolTip
+					.style('visibility', 'block');
+			};
+		});
+		netherlands.on('mouseout', resetWesternEurope);
+
+		greatBritain.on('mouseover', colourWesternEurope);
+		greatBritain.on('mouseout', resetWesternEurope);
+
+		germany.on('mouseover', colourWesternEurope);
+		germany.on('mouseout', resetWesternEurope);
+
+		belgium.on('mouseover', colourWesternEurope);
+		belgium.on('mouseout', resetWesternEurope);
 	});
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

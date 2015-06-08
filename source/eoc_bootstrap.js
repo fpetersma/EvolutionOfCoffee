@@ -180,25 +180,25 @@ function InitVis() {
 
 		// start the interactivity
 
-		// when clicking first wave
-		firstWave.on('click', function() {
-			mainMap.attr('class', 'wave first-wave');
-			d3.select('.main-info').attr('visibility', 'visible')
-		});
+		// // when clicking first wave
+		// firstWave.on('click', function() {
+		// 	mainMap.attr('class', 'wave first-wave');
+		// 	d3.select('.main-info').attr('visibility', 'visible')
+		// });
 
-		// when clicking second wave
-		secondWave.on('click', function() {
-			mainMap.attr('class', 'wave second-wave')
-		});
+		// // when clicking second wave
+		// secondWave.on('click', function() {
+		// 	mainMap.attr('class', 'wave second-wave')
+		// });
 
-		// when clicking third wave
-		thirdWave.on('click', function() {
-			mainMap.attr('class', 'wave third-wave')
-		});
+		// // when clicking third wave
+		// thirdWave.on('click', function() {
+		// 	mainMap.attr('class', 'wave third-wave')
+		// });
 
-		// when click fourth wave
-		fourthWave.on('click', function() {
-			mainMap.attr('class', 'wave fourth-wave')
-		});
+		// // when click fourth wave
+		// fourthWave.on('click', function() {
+		// 	mainMap.attr('class', 'wave fourth-wave')
+		// });
 	});
 };

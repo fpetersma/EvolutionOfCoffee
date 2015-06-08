@@ -15,14 +15,14 @@
 .subunit {
 	fill: #444444;
 }
-.boundary{
+.boundary {
 	fill: none;
 }
 .map .boundary {
 	stroke: #c0ffee;
 	stroke-width: 1px;
 }
-.first-wave .code528, .first-wave .code250, .first-wave .code682, .first-wave .code512, .first-wave .code784, .first-wave .code887, .first-wave .code231, .first-wave .code368 {
+.first-wave .code528, .first-wave .code250, .first-wave .code682, .first-wave .code512, .first-wave .code784, .first-wave .code887, .first-wave .code231 {
 	fill: #8c510a;
 }
 
@@ -30,7 +30,7 @@
 	fill: #8c510a;
 }
 
-.third-wave .code276, .third-wave .code752, .third-wave .code578, .third-wave .code246, .third-wave .code826, .third-wave .code208, .third-wave .code528, .third-wave .code840, .third-wave .code36, .third-wave .code392 {
+.third-wave .code276, .third-wave .code752, .third-wave .code578, .third-wave .code246, .third-wave .code826, .third-wave .code208, .third-wave .code528, .third-wave .code840, .third-wave .code36, .third-wave .code392, .third-wave .code56 {
 	fill: #8c510a;
 } 
 
@@ -46,9 +46,23 @@
 	left: 0;
 	right: 0;
 }
-/*.main-info {
-	visibility: hidden;
-}*/
+.main-info {
+	display: none;
+}
 .main-info-box {
 	height: 200px;
 }
+
+div .tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 12px;
+  padding: 8px;
+  font: 10px sans-serif;
+  background: #ddd;
+  border: solid 1px #aaa;
+  border-radius: 8px;
+  pointer-events: none;
+}
+

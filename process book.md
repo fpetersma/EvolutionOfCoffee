@@ -27,3 +27,15 @@ Today:
 
 - I have finally managed to implement the maps using topojson. I was a bit of a hassle to create all the different paths for all the different countries, but in the end it all worked out.  The first layout is not completed, and the next step is to start working on the interactivity. The rest of the layout will be dealt with in a later stadium. For now, I decided on leaving the background of the maps transparant, thereby letting them blend into the visualisation. 
 - The four main text elements will all be written at the same spot, and I will only make one visible every time it gets clicked. I hope this is going to work. 
+
+## 06.08.2015
+
+- On friday and saturday, I worked mainly on the lay out. I have now almost completely worked out the bootstrap layout. I have changed the background-image and some of the background-colour.
+- I have written the main texts on every period, but i cannot manage to get them hidden
+
+- I managed to get the texts hidden and visible using 'display: block/none'!!
+- but the d3 selection does not work in javascript, if i run it in the console the texts appear/disappear, but when i click it does not work. 
+
+- first on-mouseover and on-mouseout functions have been implemented: countries now 'light up' when mouseover is detected. what is actually being done, is that the countries get a stroke of the same colour, hence appearing to light up. next step are the pop ups. 
+
+- created the first code concerning the pop up, will continue tomorrow. 
