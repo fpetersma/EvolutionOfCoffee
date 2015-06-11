@@ -39,3 +39,17 @@ Today:
 - first on-mouseover and on-mouseout functions have been implemented: countries now 'light up' when mouseover is detected. what is actually being done, is that the countries get a stroke of the same colour, hence appearing to light up. next step are the pop ups. 
 
 - created the first code concerning the pop up, will continue tomorrow. 
+
+## 06.09.2015
+
+- used http://bl.ocks.org/mbostock/1087001 for the tooltip
+
+## 06.10.2015
+
+- I managed to made the tooltip adjust to the size of the inside text, so the next step is to put all the texts in a dictionary, so that I can load the specific text easily in-code.
+
+- all of the text has been added to the code, and the popups work as I want them to. added the credits, that also worked out perfectly. The next step in the process is to work on the layout and the presentation of all the data, and to decide on whether i should add more different data. also, I will check on the correctness of the data, the information and the grammar. 
+
+06.11.2015
+
+- I have decided not to show statistics on the countries, next to the stories I wrote. Instead, i will use the fourth wave map to show for all the different coffee producing countries. also, today i will rewrite some text. 
