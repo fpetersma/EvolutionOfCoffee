@@ -396,6 +396,16 @@ function InitVis() {
 
 		belgium.on('mouseover', colourWesternEurope);
 		belgium.on('mouseout', resetWesternEurope);
+
+		// var coffeeProducingCountries = ['Burundi']
+
+		// import the data for coffee producing countries to add to the fourth wave map (not functional yet)
+		d3.json('coffee_countries.json', function(error, data) {
+			console.log(data['Coffee Producing Countries'])
+			data['Coffee Producing Countries'].forEach(function(d) {
+				console.log(d.Burundi);
+			})
+		});
 	});
 };
 

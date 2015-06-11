@@ -53,3 +53,5 @@ Today:
 06.11.2015
 
 - I have decided not to show statistics on the countries, next to the stories I wrote. Instead, i will use the fourth wave map to show for all the different coffee producing countries. also, today i will rewrite some text. 
+
+- i have created a json file, containing all the coffee producing countries and some information on them. This will be available in the fourth map. 
