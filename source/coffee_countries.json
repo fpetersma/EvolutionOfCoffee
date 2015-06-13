@@ -1,207 +1,206 @@
 {
-	"Coffee Producing Countries":[
-		{"Burundi":[
+	"Coffee Producing Countries":
+		{"Burundi":
 			{"Introduction": "Coffee came to Burundi in the 1920s under Belgian colonial rule, and from 1933 every peasant farmer had to cultivate at least fifty coffee trees. When Burundi gained its independence in 1962, coffee production went private. This changed in 1972, along with the political climate, but sinces 1991 coffee has slowly been returning to the private sector.",
 			"Taste profile": "Great coffees from Burundi can hvae complex berry fruit flavours, and a great juicy quality",
-			"Varietes": "Bourbon, Jackson, Mibrizi and some SL varietes",
+			"Varieties": "Bourbon, Jackson, Mibrizi and some SL Varieties",
 			"Number of 60kg bags (2013)": "167,000",
 			"Country code": "108"}
-		],
-		"Ethiopia":[
+		,
+		"Ethiopia":
 			{"Introduction": "",
 			"Taste profile": "The flavours of Ehtiopian coffees are notably divers - from citrus, often bergamot, and florals through to candied fruit or even tropical fruit flavours. The best washed coffees can be incredibly elegant, complex and delicious and the best naturally processed ones can be wildly fruity, and enchantingly unusual.",
-			"Varietes": "Heirloom varietes",
+			"Varieties": "Heirloom Varieties",
 			"Number of 60kg bags (2013)": "6,600,000",
 			"Country code": "231"}
-		],
-		"Kenya":[
+		,
+		"Kenya":
 			{"Introduction": "",
 			"Taste profile": "Kenyan coffees are renowned for their bright, complex berry/fruit qualities as well as their sweetness and intense acidity.",
-			"Varietes": "SL-28, SL-34, Ruiru 11, Batian, K7, Blue Mountain",
+			"Varieties": "SL-28, SL-34, Ruiru 11, Batian, K7, Blue Mountain",
 			"Number of 60kg bags (2013)": "850,000",
 			"Country code": "404"}
-		],
-		"Malawi":[
+		,
+		"Malawi":
 			{"Introduction": "",
 			"Taste profile": "The coffees can be quite sweet and clean, though rarely as explosively fruity and complex as other coffees from East Africa.",
-			"Varietes": "Agaro, Geisha, Catimor, Mundo Novo, Caturra",
+			"Varieties": "Agaro, Geisha, Catimor, Mundo Novo, Caturra",
 			"Number of 60kg bags (2013)": "30,000",
 			"Country code": "454"}
-		],
-		"Rwanda":[
+		,
+		"Rwanda":
 			{"Introduction": "",
 			"Taste profile": "Amazing coffees from Rwanda often have a fruitiness and freshness reminiscent of red apples or red grapes. Berry fruit flavours and floral qualities are also fairly common.",
-			"Varietes": "Bourbon, Mibrizi",
+			"Varieties": "Bourbon, Mibrizi",
 			"Number of 60kg bags (2013)": "300,000",
 			"Country code": "646"}
-		],
-		"Tanzania":[
+		,
+		"Tanzania":
 			{"Introduction": "",
 			"Taste profile": "Complex, with bright and lively acidity and often with berry and fruity flavours, Tanzanian coffees can be juicy, interesting and delicious.",
-			"Varietes": "Kent, Bourbon, Typica, Robustas, Typica/Nyara",
+			"Varieties": "Kent, Bourbon, Typica, Robustas, Typica/Nyara",
 			"Number of 60kg bags (2013)": "750,000",
 			"Country code": "834"}
-		],
-		"Zambia":[
+		,
+		"Zambia":
 			{"Introduction": "",
 			"Taste profile": "The rare, excellent coffees are bright and floral, with a clean fruit-like complexity.",
-			"Varietes": "Bourbon, Caltimor",
+			"Varieties": "Bourbon, Caltimor",
 			"Number of 60kg bags (2013)": "10,000",
 			"Country code": "894"}
-		],
-		"Bolivia":[
+		,
+		"Bolivia":
 			{"Introduction": "",
 			"Taste profile": "The best Bolivian coffees tend to be very sweet adn very clean, but relatively rarely are they particularly fruity in flavour.",
-			"Varietes": "",
+			"Varieties": "Caturra, Typica, Catuai, Criollo",
 			"Number of 60kg bags (2013)": "100,000",
 			"Country code": "68"}
-		],
-		"Brazil":[
+		,
+		"Brazil":
 			{"Introduction": "",
 			"Taste profile": "Better Brazilian coffees tend to be low in acidity, heavy in body and sweet, often with chocolate and nutty flavours.",
-			"Varietes": "Many different varieties, including some that were devoloped or evolved here, including the Mundo Novo, Yellow Bourbon, Caturra and Catuai.",
+			"Varieties": "Many different Varieties, including some that were developed or evolved here, including the Mundo Novo, Yellow Bourbon, Caturra and Catuai",
 			"Number of 60kg bags (2013)": "47,544,000",
 			"Country code": "76"}
-		],
-		"Colombia":[
+		,
+		"Colombia":
 			{"Introduction": "",
 			"Taste profile": "Colombian coffees have a huge range of flavours, from the heavier, chocolatier coffees through to jammy, sweet, fruity lots. A huge spectrum of flavours exists across the regions.",
-			"Varietes": "Typica, Caturra, Castillo.",
+			"Varieties": "Typica, Caturra, Castillo",
 			"Number of 60kg bags (2013)": "10,900,000",
 			"Country code": "170"}
-		],
-		"Costa Rica":[
+		,
+		"Costa Rica":
 			{"Introduction": "",
 			"Taste profile": "Costa Rican coffees are typically very clean and sweet, though often very light bodied. However, recently micro mills are producing a wider range of flavours and styles.",
-			"Varietes": "Caturra, Catuai.",
+			"Varieties": "Caturra, Catuai",
 			"Number of 60kg bags (2013)": "1,396,000",
 			"Country code": "188"}
-		],
-		"Cuba":[
+		,
+		"Cuba":
 			{"Introduction": "",
 			"Taste profile": "Cuban coffees have a typical island coffee profile: relatively low in acidity with a heavier body.",
-			"Varietes": "Mostly Typica, some Bourbon, Caturra, Catuai, Catimor.",
+			"Varieties": "Mostly Typica, some Bourbon, Caturra, Catuai, Catimor",
 			"Number of 60kg bags (2013)": "150,000",
 			"Country code": "192"}
-		],
-		"Dominican Republic":[
+		,
+		"Dominican Republic":
 			{"Introduction": "",
 			"Taste profile": "Typical of coffees grown on islands, the better lots tend to be quite mild, low to middling in acitidy and relatively clean.",
-			"Varietes": "Typica, Caturra, Catuai.",
+			"Varieties": "Typica, Caturra, Catuai",
 			"Number of 60kg bags (2013)": "450,000",
 			"Country code": "214"}
-		],
-		"Ecuador":[
+		,
+		"Ecuador":
 			{"Introduction": "",
 			"Taste profile": "Coffees from Ecuador are beginning to live up to their potential for quality, with sweeter and more complex coffees becoming available. They are made more interesting by a pleasent acidity",
-			"Varietes": "Typica, Caturra, Robusta, Bourbon",
+			"Varieties": "Typica, Caturra, Robusta, Bourbon",
 			"Number of 60kg bags (2013)": "676,000",
 			"Country code": "218"}
-		],
-		"El Salvador":[
+		,
+		"El Salvador":
 			{"Introduction": "",
 			"Taste profile": "The Bourgon variety coffees from El Salvador are famously sweet and well balanced, with a pleasing soft acidity to give balance in the cup.",
-			"Varietes": "Bourbon, Pacas, Pacamara and others.",
+			"Varieties": "Bourbon, Pacas, Pacamara and others",
 			"Number of 60kg bags (2013)": "844,000",
 			"Country code": "222"}
-		],
-		"Guatemala":[
+		,
+		"Guatemala":
 			{"Introduction": "",
 			"Taste profile": "A wide range of flavours are present in Guatemala's coffees, from lighter, very sweet, fruity and complex coffees through to the heavier, richer and more choclatey cups.",
-			"Varietes": "Bourbon, Caturra, Catuai, Typica, Pache.",
+			"Varieties": "Bourbon, Caturra, Catuai, Typica, Pache",
 			"Number of 60kg bags (2013)": "3,143,000",
 			"Country code": "320"}
-		],
-		"Hawaii":[
+		,
+		"Hawaii":
 			{"Introduction": "",
 			"Taste profile": "Typically lower in acidity, with a little more body. Approachable but rarely complex and fruited.",
-			"Varietes": "Yellow Cutuai, Red Catuai, Typica, Blue Mountain, Mundo Novo, Catuai, Mokka.",
+			"Varieties": "Yellow Cutuai, Red Catuai, Typica, Blue Mountain, Mundo Novo, Catuai, Mokka",
 			"Number of 60kg bags (2013)": "43,181",
 			"Country code": "0"}
-		],
-		"Honduras":[
+		,
+		"Honduras":
 			{"Introduction": "",
 			"Taste profile": "A rang of different flavours are found in Honduran coffees, but the best often have a complex fruity quality, and a lively, juicy acidity.",
-			"Varietes": "Bourbon, Caturra, Catuai, Pacas, Typica.",
+			"Varieties": "Bourbon, Caturra, Catuai, Pacas, Typica",
 			"Number of 60kg bags (2013)": "4,200,000",
 			"Country code": "340"}
-		],
-		"Jamaica":[
+		,
+		"Jamaica":
 			{"Introduction": "",
 			"Taste profile": "Clean, sweet coffees though rarely complex or juicy and fruity.",
-			"Varietes": "Jamaica Blue Mountain, Typica.",
+			"Varieties": "Jamaica Blue Mountain, Typica",
 			"Number of 60kg bags (2013)": "18,000",
 			"Country code": "388"}
-		],
-		"Mexico":[
+		,
+		"Mexico":
 			{"Introduction": "",
 			"Taste profile": "Mexico produces quite a range of coffees across its regions, from lighter-bodied, delicate coffees through to sweeter coffees with caramel, toffee or chocolate flavours in the cup.",
-			"Varietes": "Bourbon, Typica, Caturra, Maragogype.",
+			"Varieties": "Bourbon, Typica, Caturra, Maragogype",
 			"Number of 60kg bags (2013)": "3,900,000",
 			"Country code": "484"}
-		],
-		"Nicaragua":[
+		,
+		"Nicaragua":
 			{"Introduction": "",
 			"Taste profile": "A range of flavours are found in Nicaraguan coffees. They are typically quite complex and capable of pleasing fruit-like flavours and clean acidity.",
-			"Varietes": "Caturra, Bourbon.",
+			"Varieties": "Caturra, Bourbon",
 			"Number of 60kg bags (2013)": "1,500,000",
 			"Country code": "558"}
-		],
-		"Panama":[
+		,
+		"Panama":
 			{"Introduction": "",
 			"Taste profile": "The better coffees tend to be citrusy and floral, light, bodied, delicate and complex.",
-			"Varietes": "Typica, Caturra, Bourbon, Catuai, Geisha, San Ramon.",
+			"Varieties": "Typica, Caturra, Bourbon, Catuai, Geisha, San Ramon",
 			"Number of 60kg bags (2013)": "100,000",
 			"Country code": "591"}
-		],
-		"Peru":[
+		,
+		"Peru":
 			{"Introduction": "",
 			"Taste profile": "Typically Peruvian coffees hvae been clean, but a little soft and flat. They are sweet and relatively heavy bodied but not very complex. Increasingly there are distinctive and juicier coffees becoming available.",
-			"Varietes": "Bourbon, Typica, Caturra, Pache, Mondo Novo, Catuai, Catimor.",
+			"Varieties": "Bourbon, Typica, Caturra, Pache, Mondo Novo, Catuai, Catimor",
 			"Number of 60kg bags (2013)": "4,200,000",
 			"Country code": "604"}
-		],
-		"Venezuela":[
+		,
+		"Venezuela":
 			{"Introduction": "",
 			"Taste profile": "The better coffees from Venezuela are quite sweet, a little low in acidity and relatively rich in terms of mouthfeel and texture.",
-			"Varietes": "Typica, Bourbon, Mundo Novo, Caturra.",
+			"Varieties": "Typica, Bourbon, Mundo Novo, Caturra",
 			"Number of 60kg bags (2013)": "900,000",
 			"Country code": "862"}
-		],
-		"India":[
+		,
+		"India":
 			{"Introduction": "",
 			"Taste profile": "The best coffees from India tend to be heavy, creamy and low in acidity, but rarely particularly complex.",
-			"Varietes": "S795, Selection 5B, Selection 9, Selection 10, Cauvery, Kent, Robustas, Selection 4, Selection 6, S274.",
+			"Varieties": "S795, Selection 5B, Selection 9, Selection 10, Cauvery, Kent, Robustas, Selection 4, Selection 6, S274",
 			"Number of 60kg bags (2013)": "5,303,000",
 			"Country code": "356"}
-		],
-		"Indonesia":[
+		,
+		"Indonesia":
 			{"Introduction": "",
 			"Taste profile": "Semi-washed coffees tend to be very heavy bodied, earthy, woody and spicy with very little acidity.",
-			"Varietes": "Typica, TimTim, Ateng, Onon Gangjang, S795, Typica, USDA, Robusta.",
+			"Varieties": "Typica, TimTim, Ateng, Onon Gangjang, S795, Typica, USDA, Robusta",
 			"Number of 60kg bags (2013)": "11,667,000",
 			"Country code": "360"}
-		],
-		"Papua New Guinea":[
+		,
+		"Papua New Guinea":
 			{"Introduction": "",
 			"Taste profile": "Great coffees from Papua New Guinea often have a buttery quality, great sweetness and wonderful complexity.",
-			"Varietes": "Bourbon, Typica, Arusha.",
+			"Varieties": "Bourbon, Typica, Arusha",
 			"Number of 60kg bags (2013)": "1,000,000",
 			"Country code": "598"}
-		],		
-		"Vietnam":[
+		,		
+		"Vietnam":
 			{"Introduction": "",
 			"Taste profile": "Very little high-quality coffee is available in Vietnam, and so most tastes flat, woody, and lacks sweetness or much character.",
-			"Varietes": "Robusta, Bourbon, Sparrow, Catimor.",
+			"Varieties": "Robusta, Bourbon, Sparrow, Catimor",
 			"Number of 60kg bags (2013)": "27,500,000",
 			"Country code": "704"}
-		],		
-		"Yemen":[
+		,		
+		"Yemen":
 			{"Introduction": "",
 			"Taste profile": "Wild, complex and pungent, a completely distinctive coffee experience, different from other coffees around the world. For some the wild, slightly fermented fruit quality is off-putting, while others prize it highly.",
-			"Varietes": "Heirloom varietes.",
+			"Varieties": "Heirloom Varieties",
 			"Number of 60kg bags (2013)": "200,000",
 			"Country code": "887"}
-		]}
-	]
+		}
 }

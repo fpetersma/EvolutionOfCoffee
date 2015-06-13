@@ -55,3 +55,11 @@ Today:
 - I have decided not to show statistics on the countries, next to the stories I wrote. Instead, i will use the fourth wave map to show for all the different coffee producing countries. also, today i will rewrite some text. 
 
 - i have created a json file, containing all the coffee producing countries and some information on them. This will be available in the fourth map. 
+
+06.12.2015
+
+- background source = http://pabloandrustys.com.au/images/uploads/PR-sustainability-feature.jpg
+
+- i created a list of all coffee producing countries to use this to loop over the countries from the json file. 
+
+- used http://www.coffeehunter.com/green_coffees/european/bolivia to get the varieties of bolivia, those were missing in the book.
