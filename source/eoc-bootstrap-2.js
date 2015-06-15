@@ -33,36 +33,41 @@ function InitVis() {
 	var firstWave = d3.select('#first-wave').append('svg')
 		.attr('width', WIDTH.smallMap)
 		.attr('height', HEIGHT.smallMap)
-		.attr('class', 'wave first-wave')
+		.attr('class', 'wave first-wave');
+
 
 	// create svg for second wave
 	var secondWave = d3.select('#second-wave').append('svg')
 		.attr('width', WIDTH.smallMap)
 		.attr('height', HEIGHT.smallMap)
-		.attr('class', 'wave second-wave')
+		.attr('class', 'wave second-wave');
 
 	// create svg for third wave
 	var thirdWave = d3.select('#third-wave').append('svg')
 		.attr('width', WIDTH.smallMap)
 		.attr('height', HEIGHT.smallMap)
-		.attr('class', 'wave third-wave')
+		.attr('class', 'wave third-wave');
 
 	// create svg for fourth wave
 	var fourthWave = d3.select('#fourth-wave').append('svg')
 		.attr('width', WIDTH.smallMap)
 		.attr('height', HEIGHT.smallMap)
-		.attr('class', 'wave fourth-wave')
+		.attr('class', 'wave fourth-wave');
 
 	// create svg for the main map
 	var mainMap = d3.select('#map').append('svg')
 		.attr('width', WIDTH.largeMap)
 		.attr('height', HEIGHT.largeMap)
 		.attr('class', 'wave map')
+		.on('click', function() {
+			console.log(d3.event.pageX)
+			console.log(d3.event.pageY)
+		});
 
 	// create svg element to put general info
 	var generalInfo = d3.select('#information').append('svg')
-		.attr('width', 1000)
-		.attr('height', 300)
+		.attr('width', WIDTH.largeMap)
+		.attr('height', HEIGHT.largeMap / 2)
 		.append('p')
 			.attr('class', 'main-text')
 
@@ -128,22 +133,23 @@ function InitVis() {
 
 		// when a wave is actually clicked
 		firstWave.on('click', function() {
-			showForWave('first-wave', '.text-1')
+			showForWave('first-wave', '.text-1');
 		});
 		secondWave.on('click', function() {
-			showForWave('second-wave', '.text-2')
+			showForWave('second-wave', '.text-2');
 		});
 		thirdWave.on('click', function() {
-			showForWave('third-wave', '.text-3')
+			showForWave('third-wave', '.text-3');
 		});
 		fourthWave.on('click', function() {
-			showForWave('fourth-wave', '.text-4')
+			showForWave('fourth-wave', '.text-4');
 		});
 
 		// create the div for the tooltip
 		var toolTip = d3.select('.container-map').append('div')
 			.attr('class', 'tooltip')
 			.style('display', 'none')
+			.style('max-width', WIDTH.largeMap / 2 + 'px');
 
 		// selection paths to all the countries
 		var france = mainMap.select('.code250'),
@@ -166,32 +172,45 @@ function InitVis() {
 			germany = mainMap.select('.code276'),
 			australia = mainMap.selectAll('.code36');
 
-		function highlightArea(area) {
+		function highlightArea(area, wave) {
+			mainMap
+				.attr('class', 'wave ' + wave + ' blanco')
 			area
-				.style('stroke', '#723500')
-				.style('stroke-width', '1.5px');		
+				.style('fill', '#8c3500');	
 		};
 
 		// function that colours the country and shows the tooltip
 		function showInformation(wave, path, title, textPart) {
 			if (mainMap.attr('class') == 'wave ' + wave) {
-				highlightArea(path)
+				highlightArea(path, wave)
 				// show tooltip
-				toolTip
-					.style('left', (d3.event.pageX) + 'px')
-					.style('top', (d3.event.pageY) + 'px')
-					.style('display', 'block');
+				
 				toolTip.append('h4')
-					.text(title)
+					.text(title);
 			    toolTip.append('p')
 			    	.text(textPart);
+				if (d3.event.pageX >= window.innerWidth / 2) {
+					toolTip
+						.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px');
+				}
+				else {
+					toolTip
+						.style('left', (d3.event.pageX) + 'px');
+				};
+				toolTip
+					.style('top', d3.event.pageY + 'px')
+					.style('display', 'block');
 			};
 		};
 
 		// function that clears the map on mouseout
 		function clearInformation(wave, path) {
-			if (mainMap.attr('class') == 'wave ' + wave) {
-				path.style('stroke', null);
+			if (mainMap.attr('class') == 'wave ' + wave + ' blanco') {
+				path
+					.style('fill', null)
+				mainMap
+					.attr('class', 'wave ' + wave)
+
 				// remove all elements inside the tooltip
 				$('.tooltip').empty();
 				toolTip.style('display', 'none');
@@ -201,29 +220,40 @@ function InitVis() {
 		// function that colours the country and shows the tooltip for western europe
 		function showInformationWesternEurope() {
 			if (mainMap.attr('class') == 'wave third-wave') {
-				highlightArea(netherlands);
-				highlightArea(belgium);
-				highlightArea(greatBritain);
-				highlightArea(germany);
+				highlightArea(netherlands, 'third-wave');
+				highlightArea(belgium, 'third-wave');
+				highlightArea(greatBritain, 'third-wave');
+				highlightArea(germany, 'third-wave');
 				// show tooltip
-				toolTip
-					.style('left', (d3.event.pageX) + 'px')
-					.style('top', (d3.event.pageY) + 'px')
-					.style('display', 'block');
 				toolTip.append('h4')
 					.text('Western Europe')
 			    toolTip.append('p')
 			    	.text(popUpTexts.westernEurope);
+			    if (d3.event.pageX < window.innerWidth / 2) {
+					toolTip
+						.style('left', (d3.event.pageX) + 'px')
+						.style('top', (d3.event.pageY) + 'px');
+				};
+				if (d3.event.pageX >= window.innerWidth / 2) {
+					toolTip
+						.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
+						.style('top', (d3.event.pageY) + 'px');
+				};
+				toolTip
+					.style('display', 'block');
 			};
 		};
 
 		// function that clears the map on mouseout for western europe
 		function clearInformationWesternEurope() {
-			if (mainMap.attr('class') == 'wave third-wave') {
-				netherlands.style('stroke', null);
-				greatBritain.style('stroke', null);
-				germany.style('stroke', null);
-				belgium.style('stroke', null);
+			if (mainMap.attr('class') == 'wave third-wave blanco') {
+				mainMap
+					.attr('class', 'wave third-wave')
+
+				netherlands.style('fill', null);
+				greatBritain.style('fill', null);
+				germany.style('fill', null);
+				belgium.style('fill', null);
 
 				toolTip.style('display', 'none');
 				$('.tooltip').empty();
@@ -233,73 +263,97 @@ function InitVis() {
 		// function that colours the country and shows the tooltip for scandinavia
 		function showInformationScandinavia() {
 			if (mainMap.attr('class') == 'wave third-wave') {
-				highlightArea(sweden);
-				highlightArea(norway);
-				highlightArea(finland);
-				highlightArea(denmark);
+				highlightArea(sweden, 'third-wave');
+				highlightArea(norway, 'third-wave');
+				highlightArea(finland, 'third-wave');
+				highlightArea(denmark, 'third-wave');
 				// show tooltip
-				toolTip
-					.style('left', (d3.event.pageX) + 'px')
-					.style('top', (d3.event.pageY) + 'px')
-					.style('display', 'block')
 				toolTip.append('h4')
 					.text('Scandinavia');
 			    toolTip.append('p')
 			    	.text(popUpTexts.scandinavia);
+			    if (d3.event.pageX < window.innerWidth / 2) {
+					toolTip
+						.style('left', (d3.event.pageX) + 'px')
+						.style('top', (d3.event.pageY) + 'px');
+				};
+				if (d3.event.pageX >= window.innerWidth / 2) {
+					toolTip
+						.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
+						.style('top', (d3.event.pageY) + 'px');
+				};
+				toolTip
+					.style('display', 'block');
 			};
-		}
+		};
+
 		// function that clears the map on mouseout for scandinavia
 		function clearInformationScandinavia() {
-			if (mainMap.attr('class') == 'wave third-wave') {
-				norway.style('stroke', null);
-				sweden.style('stroke', null);
-				denmark.style('stroke', null);
-				finland.style('stroke', null);
+			if (mainMap.attr('class') == 'wave third-wave blanco') {
+				mainMap
+					.attr('class', 'wave third-wave')
+
+				norway.style('fill', null);
+				sweden.style('fill', null);
+				denmark.style('fill', null);
+				finland.style('fill', null);
 
 				toolTip.style('display', 'none');
 				$('.tooltip').empty();
 			};
-		}
+		};
 
 		// function that colours the country and shows the tooltip for the arabian peninsula
 		function showInformationArabPeninsula() {
 			if (mainMap.attr('class') == 'wave first-wave') {
-				highlightArea(ethiopia);
-				highlightArea(saoudiArabia);
-				highlightArea(yemen);
-				highlightArea(oman);
-				highlightArea(unitedArabEmirates);
+				highlightArea(ethiopia, 'first-wave');
+				highlightArea(saoudiArabia, 'first-wave');
+				highlightArea(yemen, 'first-wave');
+				highlightArea(oman, 'first-wave');
+				highlightArea(unitedArabEmirates, 'first-wave');
 				// show toolTip
-				toolTip
-					.style('left', (d3.event.pageX) + 'px')
-					.style('top', (d3.event.pageY) + 'px')
-					.style('display', 'block');
 				toolTip.append('h4')
-					.text('Arabian Peninsula');
+					.text('Ethiopia and the Arabian Peninsula');
 			    toolTip.append('p')
 			    	.text(popUpTexts.arabPeninsula);
+			    if (d3.event.pageX < window.innerWidth / 2) {
+					toolTip
+						.style('left', (d3.event.pageX) + 'px')
+						.style('top', (d3.event.pageY) + 'px');
+				};
+				if (d3.event.pageX >= window.innerWidth / 2) {
+					toolTip
+						.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
+						.style('top', (d3.event.pageY) + 'px');
+				};
+				toolTip
+					.style('display', 'block');
 			};
-		}
+		};
 
 		// function that clears the map on mouseout for the arabian peninsula
 		function clearInformationArabPeninsula() {
-			if (mainMap.attr('class') == 'wave first-wave') {
-				ethiopia.style('stroke', null);
-				yemen.style('stroke', null);
-				saoudiArabia.style('stroke', null);
-				oman.style('stroke', null);
-				unitedArabEmirates.style('stroke', null);
+			if (mainMap.attr('class') == 'wave first-wave blanco') {
+				mainMap
+					.attr('class', 'wave first-wave');
+
+				ethiopia.style('fill', null);
+				saoudiArabia.style('fill', null);
+				yemen.style('fill', null);
+				oman.style('fill', null);
+				unitedArabEmirates.style('fill', null);
 
 				toolTip.style('display', 'none');
 				$('.tooltip').empty();
 			};
-		}
+		};
 
 		// import the data for coffee producing countries to add to the fourth wave map
 		d3.json('coffee_countries.json', function(error, data) {
 			var countries = data['Coffee Producing Countries'];
 			coffeeCountries.forEach(function(country) {
-				if (country != 'Yemen' && country != 'Ethiopia') {
+				// skip yemen and ethiopia because they will get the .on(mousover) later in the code, skip hawaii due to irrelevance
+				if (country != 'Yemen' && country != 'Ethiopia' && country != 'Hawaii') {
 					var tasteProfile = countries[country]['Taste profile'];
 					var varieties = countries[country]['Varieties'];
 					var production = countries[country]['Number of 60kg bags (2013)'];
@@ -307,10 +361,8 @@ function InitVis() {
 					var path = mainMap.select('.code' + countries[country]['Country code']);
 					path.on('mouseover', function() {
 						if (mainMap.attr('class') == 'wave fourth-wave') {
-							highlightArea(path);
+							highlightArea(path, 'fourth-wave');
 							toolTip
-								.style('left', (d3.event.pageX) + 'px')
-								.style('top', (d3.event.pageY) + 'px')
 								.style('display', 'block');
 							toolTip.append('h4')
 								.text(country);
@@ -326,6 +378,18 @@ function InitVis() {
 								.text('Production of 60kg bags (2013)');
 							toolTip.append('p')
 								.text(production);
+							if (d3.event.pageX < window.innerWidth / 2) {
+								toolTip
+									.style('left', (d3.event.pageX) + 'px')
+									.style('top', (d3.event.pageY) + 'px');
+							};
+							if (d3.event.pageX >= window.innerWidth / 2) {
+								toolTip
+									.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
+									.style('top', (d3.event.pageY) + 'px');
+							};
+							toolTip
+								.style('display', 'block');
 						};
 					});
 					path.on('mouseout', function() {
@@ -393,11 +457,7 @@ function InitVis() {
 					var varieties = countries['Ethiopia']['Varieties'];
 					var production = countries['Ethiopia']['Number of 60kg bags (2013)'];
 
-					highlightArea(ethiopia);
-					toolTip
-						.style('left', (d3.event.pageX) + 'px')
-						.style('top', (d3.event.pageY) + 'px')
-						.style('display', 'block');
+					highlightArea(ethiopia, 'fourth-wave');
 					toolTip.append('h4')
 						.text('Ehtiopia');
 					toolTip.append('h5')
@@ -412,37 +472,25 @@ function InitVis() {
 						.text('Production of 60kg bags (2013)');
 					toolTip.append('p')
 						.text(production);
-				};
-				if (mainMap.attr('class') == 'wave first-wave') {
-					highlightArea(ethiopia);
-					highlightArea(saoudiArabia);
-					highlightArea(yemen);
-					highlightArea(oman);
-					highlightArea(unitedArabEmirates);
-					// show toolTip
+					if (d3.event.pageX < window.innerWidth / 2) {
+						toolTip
+							.style('left', (d3.event.pageX) + 'px')
+							.style('top', (d3.event.pageY) + 'px');
+					};
+					if (d3.event.pageX >= window.innerWidth / 2) {
+						toolTip
+							.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
+							.style('top', (d3.event.pageY) + 'px');
+					};
 					toolTip
-						.style('left', (d3.event.pageX) + 'px')
-						.style('top', (d3.event.pageY) + 'px')
 						.style('display', 'block');
-					toolTip.append('h4')
-						.text('Arabian Peninsula');
-				    toolTip.append('p')
-				    	.text(popUpTexts.arabPeninsula);
 				};
+				showInformationArabPeninsula();
 			});
 			
 			ethiopia.on('mouseout', function() {
 				clearInformation('fourth-wave', ethiopia);
-				if (mainMap.attr('class') == 'wave first-wave') {
-					ethiopia.style('stroke', null);
-					yemen.style('stroke', null);
-					saoudiArabia.style('stroke', null);
-					oman.style('stroke', null);
-					unitedArabEmirates.style('stroke', null);
-
-					toolTip.style('display', 'none');
-					$('.tooltip').empty();
-				};
+				clearInformationArabPeninsula();
 			});
 
 			yemen.on('mouseover', function() {
@@ -451,11 +499,7 @@ function InitVis() {
 					var varieties = countries['Yemen']['Varieties'];
 					var production = countries['Yemen']['Number of 60kg bags (2013)'];
 
-					highlightArea(yemen);
-					toolTip
-						.style('left', (d3.event.pageX) + 'px')
-						.style('top', (d3.event.pageY) + 'px')
-						.style('display', 'block');
+					highlightArea(yemen, 'fourth-wave');
 					toolTip.append('h4')
 						.text('Yemen');
 					toolTip.append('h5')
@@ -470,36 +514,24 @@ function InitVis() {
 						.text('Production of 60kg bags (2013)');
 					toolTip.append('p')
 						.text(production);
-				};
-				if (mainMap.attr('class') == 'wave first-wave') {
-					highlightArea(ethiopia);
-					highlightArea(saoudiArabia);
-					highlightArea(yemen);
-					highlightArea(oman);
-					highlightArea(unitedArabEmirates);
-					// show toolTip
+					if (d3.event.pageX < window.innerWidth / 2) {
+						toolTip
+							.style('left', (d3.event.pageX) + 'px')
+							.style('top', (d3.event.pageY) + 'px');
+					};
+					if (d3.event.pageX >= window.innerWidth / 2) {
+						toolTip
+							.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
+							.style('top', (d3.event.pageY) + 'px');
+					};
 					toolTip
-						.style('left', (d3.event.pageX) + 'px')
-						.style('top', (d3.event.pageY) + 'px')
 						.style('display', 'block');
-					toolTip.append('h4')
-						.text('Arabian Peninsula');
-				    toolTip.append('p')
-				    	.text(popUpTexts.arabPeninsula);
-				};
+					};
+				showInformationArabPeninsula();
 			});
 			yemen.on('mouseout', function() {
 				clearInformation('fourth-wave', yemen);
-				if (mainMap.attr('class') == 'wave first-wave') {
-					ethiopia.style('stroke', null);
-					yemen.style('stroke', null);
-					saoudiArabia.style('stroke', null);
-					oman.style('stroke', null);
-					unitedArabEmirates.style('stroke', null);
-
-					toolTip.style('display', 'none');
-					$('.tooltip').empty();
-				};
+				clearInformationArabPeninsula();
 			});
 
 			saoudiArabia.on('mouseover', showInformationArabPeninsula);

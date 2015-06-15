@@ -15,3 +15,8 @@ body {
 body #map, #about {
 	background: #eee;
 }
+
+.yes {
+	position: absolute;
+	bottom: 0;
+}

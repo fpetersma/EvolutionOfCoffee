@@ -14,7 +14,7 @@ body {
 }
 
 .text-primary {
-    color: #c1ffee;
+    color: #ccc;
 }
 
 p {
@@ -165,6 +165,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .btn-xl .badge {
+    text-transform: none;
     color: #c1ffee;
     background-color: #fff;
 }

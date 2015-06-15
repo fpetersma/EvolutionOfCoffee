@@ -63,3 +63,10 @@ Today:
 - i created a list of all coffee producing countries to use this to loop over the countries from the json file. 
 
 - used http://www.coffeehunter.com/green_coffees/european/bolivia to get the varieties of bolivia, those were missing in the book.
+
+06.15.2015
+
+- at this point, the colours are not really working for me, so i think i will give every country a different colour, all similar colours to the ripe coffeeberries shown in the background image. moreover, for some reason, the showInformationArabPeninsula and clearInfoArabPeninsula fuction are not working properly when called upon inside the on.'mouseover' attribute of ethiopia and yemen. However, if i copy the funtions completely inside the on.'mouseover' attribute, it works perfectly... I need to figure out what is going on here. 
+- moreover, i want to change the highlighting on the map; instead of highlighting the mouseover-ed country, i want to make all the other ocuntries lighter grey. love it! Succeeded!!
+
+- managed to get the function working as well, turned out to have anything to do with callbacks and stuff like that, should have known. also managed to flip the popup when reacing the right part of the map, so thats good. will now try to change background colour of the pop up
