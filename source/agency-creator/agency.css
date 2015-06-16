@@ -35,14 +35,14 @@ a.active {
 }
 
 a {
-    color: #c1ffee;
+    color: #cccccc;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #c2ffee;
+    color: #cccccc;
 }
 
 h1,
@@ -69,12 +69,12 @@ h6 {
 }
 
 .btn-primary {
-    border-color: #c1ffee;
+    border-color: #cccccc;
     text-transform: uppercase;
     font-family: sans-serif;
     font-weight: 700;
     color: #fff;
-    background-color: #c1ffee;
+    background-color: #cccccc;
 }
 
 .btn-primary:hover,
@@ -82,9 +82,9 @@ h6 {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    border-color: #c2ffee;
+    border-color: #cccccc;
     color: #fff;
-    background-color: #c2ffee;
+    background-color: #cccccc;
 }
 
 .btn-primary:active,
@@ -108,12 +108,12 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    border-color: #c1ffee;
-    background-color: #c1ffee;
+    border-color: #cccccc;
+    background-color: #cccccc;
 }
 
 .btn-primary .badge {
-    color: #c1ffee;
+    color: #cccccc;
     background-color: #fff;
 }
 
@@ -166,7 +166,7 @@ fieldset[disabled] .btn-xl.active {
 
 .btn-xl .badge {
     text-transform: none;
-    color: #c1ffee;
+    color: #cccccc;
     background-color: #fff;
 }
 
@@ -176,14 +176,14 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-brand {
-    color: #c1ffee;
+    color: #cccccc;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #c2ffee;
+    color: #cccccc;
 }
 
 .navbar-default .navbar-collapse {
@@ -191,8 +191,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #c1ffee;
-    background-color: #c1ffee;
+    border-color: #cccccc;
+    background-color: #cccccc;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -201,7 +201,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #c1ffee;
+    background-color: #cccccc;
 }
 
 .navbar-default .nav li a {
@@ -221,7 +221,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
-    background-color: #c1ffee;
+    background-color: #cccccc;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
@@ -492,7 +492,7 @@ section h3.section-subheading {
     border-radius: 100%;
     text-align: center;
     color: #fff;
-    background-color: #c1ffee;
+    background-color: #cccccc;
 }
 
 .timeline>li .timeline-image h4 {
@@ -679,7 +679,7 @@ section#contact .form-group textarea.form-control {
 }
 
 section#contact .form-control:focus {
-    border-color: #c1ffee;
+    border-color: #cccccc;
     box-shadow: none;
 }
 
@@ -757,7 +757,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #c1ffee;
+    background-color: #cccccc;
 }
 
 .btn:focus,
@@ -845,12 +845,12 @@ ul.social-buttons li a:active {
 
 ::-moz-selection {
     text-shadow: none;
-    background: #c1ffee;
+    background: #cccccc;
 }
 
 ::selection {
     text-shadow: none;
-    background: #c1ffee;
+    background: #cccccc;
 }
 
 img::selection {
@@ -862,5 +862,5 @@ img::-moz-selection {
 }
 
 body {
-    webkit-tap-highlight-color: #c1ffee;
+    webkit-tap-highlight-color: #cccccc;
 }

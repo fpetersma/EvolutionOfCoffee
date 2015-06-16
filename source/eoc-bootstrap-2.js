@@ -15,7 +15,7 @@ function InitVis() {
 	var mainTexts = {first: 'Long, long ago, in the far-away Ethiopian highlands, there lived a goatherd. His name was Kaldi, and one day he noticed his dancing and being unable to sleep at night after eating the berries from a certain plant. Kaldi told the abbot at the local monastery about his findings, and the abbot and the other monks started exploring this unique berry and its effects. Although this story is just a myth and can not be confirmed, coffee does originate from Ethiopia.',
 				 	second: 'After the discovery of the coffee in Ethiopia and it being cultived all over the world, coffee was almost indispensable in the daily routine of many people around the world. The coffee houses were places were people met to talk about all sorts of things, from day-to-day stuff to important strategic decisions. And although there were differences, almost all coffee made using a filtering technique; the roasted beans were grinded and the coffee was extracted using hot water. Espresso started growing in popularity around the world from around 1950, thereby ushering the second wave of coffee.',
 				 	third: 'Initialised by Starbucks around 1990, more and more companies started direct-trading with farmers to ensure the highest possible quality of the coffee and to find and create particular flavours. People started focussing on the origin of a coffee, how it was processed, what region it was from and what variety it was. Coffee was no longer only being traded on a single Coffea Arabica market for a single price; over 40 different varietes have already been discovered, and still new varietiens are discovered or created, all with their own unique charactaristics. With all this focus for detail about the bean and the processes that were involved, also came a new interest in extraction methods. Espresso, although still by far the most sold coffee in coffeehouses today, was not the only way to make coffee anymore. New techniques were discovered and old ones were being used again. The new focus on \'filter coffees\' also let to new ways of roasting; where, in general, an espresso roast is pretty dark, in order bring out the sweetness and bitterness in coffee (the high pressure of an espresso machine increase the level of acidity in coffee, so this needs to be balanced out), a filter coffee roast could be lighter, fruitier and greener. Most filter methods do not use any form of pressure, thus leading to a calmer extraction, and very little distorted flavours.',
-				 	fourth: 'Back to the future...' };
+				 	fourth: 'Coffee has always been a very popular drink, one of the most popular in the world, in fact. What is different now, compared to before, is not just the focus on a very unique cup of coffee; it is also the focus on letting people experience it outside of the usual coffee bars and roasteries, at places such as large events or at home. This change in attitude towards coffee might be the beginning of the fourth wave; a period where it is not just about creating the \'best coffee\', but about exploring all the different flavours that are available, what different roasts do to different coffees, what extraction techniques result in what flavours, and sharing this knowledge with the rest of the world, not just with the hipsters at the coffeebars. For this wave, the map will show something different: for every coffee producing country, information is available on the varieties that are common and what flavour characteristics are unique for the area.' };
 
 	// pieces of text that will be used to put in the toolTip on mouseover a specific country
 	var popUpTexts = {netherlands: 'Because the Arabs only sold roasted beans, the Netherlands, among other European countries, were not able to cultivate coffee themselves. This monopoly came to an end when a trader from the Dutch East Indian Company, Pieter van der Broecke, managed to \'obtain\' (some sources say \'steal\') some coffee plants from Yemen in 1616. These plants grew so well in the Amsterdam Botanical Gardens, that in 1658 the first \'Coffea Arabica\' was being cultivated in Ceylon(Sri Lanka) and not much later also in other Dutch colonies, such as India, Java (Indonesia) and Suriname. ',
@@ -30,26 +30,25 @@ function InitVis() {
 					 australia: 'Australia is the country were they \'invented\' the flat white; an espresso-based beverage, similar to latte, but with less milk, thus having a espresso-to-milk ratio somewhere between a latte and a cortado. Where the American coffee culture focuses on large amounts of coffee, the Australian coffee culture focusses on single, smaller cups of coffee, making one coffee at the time. In this way this culture is similar to the European culture, although the Australians tend to using darker roasts, especially compared to Scaninavia.'};
 
 	// create svg for first wave
-	var firstWave = d3.select('#first-wave').append('svg')
+	var firstWave = d3.select('#first-wave').select('svg')
 		.attr('width', WIDTH.smallMap)
 		.attr('height', HEIGHT.smallMap)
 		.attr('class', 'wave first-wave');
 
-
 	// create svg for second wave
-	var secondWave = d3.select('#second-wave').append('svg')
+	var secondWave = d3.select('#second-wave').select('svg')
 		.attr('width', WIDTH.smallMap)
 		.attr('height', HEIGHT.smallMap)
 		.attr('class', 'wave second-wave');
 
 	// create svg for third wave
-	var thirdWave = d3.select('#third-wave').append('svg')
+	var thirdWave = d3.select('#third-wave').select('svg')
 		.attr('width', WIDTH.smallMap)
 		.attr('height', HEIGHT.smallMap)
 		.attr('class', 'wave third-wave');
 
 	// create svg for fourth wave
-	var fourthWave = d3.select('#fourth-wave').append('svg')
+	var fourthWave = d3.select('#fourth-wave').select('svg')
 		.attr('width', WIDTH.smallMap)
 		.attr('height', HEIGHT.smallMap)
 		.attr('class', 'wave fourth-wave');
@@ -59,10 +58,6 @@ function InitVis() {
 		.attr('width', WIDTH.largeMap)
 		.attr('height', HEIGHT.largeMap)
 		.attr('class', 'wave map')
-		.on('click', function() {
-			console.log(d3.event.pageX)
-			console.log(d3.event.pageY)
-		});
 
 	// create svg element to put general info
 	var generalInfo = d3.select('#information').append('svg')
@@ -129,6 +124,9 @@ function InitVis() {
 			mainMap.attr('class', 'wave ' + wave);
 			mainInfo.style('display', 'none');
 			d3.select(text).style('display', 'block');
+			d3.select('#info-btn').attr('class', 'btn-lg');
+			d3.select('#waves').selectAll('a').style('background-color', null);
+			d3.select('#' + wave).select('a').style('background-color', '#eee');
 		}
 
 		// when a wave is actually clicked
@@ -149,7 +147,54 @@ function InitVis() {
 		var toolTip = d3.select('.container-map').append('div')
 			.attr('class', 'tooltip')
 			.style('display', 'none')
-			.style('max-width', WIDTH.largeMap / 2 + 'px');
+			.style('max-width', WIDTH.largeMap * 3 / 5 + 'px');
+
+		var mainTextTip = d3.select('.container-map').append('div')
+			.attr('class', 'maintexttip')
+			.style('display', 'none')
+			.style('width', '1000px')
+			.style('margin-left', 'auto')
+			.style('margin-right', 'auto')
+			.style('right', 0)
+			.style('left', 0)
+			
+
+		// show main-info text as pop up if button is clicked
+    	d3.select('#info-btn').on('click', function() {
+
+    		if (mainTextTip.style('display') == 'block') {
+    			$('.maintexttip').empty();
+    			mainTextTip.style('display', 'none');
+    		}
+
+    		else if (mainMap.attr('class') == 'wave first-wave') {
+    			mainTextTip.append('p')
+    				.text(mainTexts.first);
+    			mainTextTip
+    				.style('display', 'block');
+    		}
+
+    		else if (mainMap.attr('class') == 'wave second-wave') {
+    			mainTextTip.append('p')
+    				.text(mainTexts.second)
+    			mainTextTip
+    				.style('display', 'block');
+    		}
+
+    		else if (mainMap.attr('class') == 'wave third-wave') {
+    			mainTextTip.append('p')
+    				.text(mainTexts.third)
+    			mainTextTip
+    				.style('display', 'block');
+    		}
+
+    		else if (mainMap.attr('class') == 'wave fourth-wave') {
+    			mainTextTip.append('p')
+    				.text(mainTexts.fourth)
+    			mainTextTip
+    				.style('display', 'block');
+    		};
+    	});
 
 		// selection paths to all the countries
 		var france = mainMap.select('.code250'),
@@ -179,27 +224,29 @@ function InitVis() {
 				.style('fill', '#8c3500');	
 		};
 
-		// function that colours the country and shows the tooltip
-		function showInformation(wave, path, title, textPart) {
-			if (mainMap.attr('class') == 'wave ' + wave) {
-				highlightArea(path, wave)
-				// show tooltip
-				
-				toolTip.append('h4')
-					.text(title);
+		function showToolTip(header, text) {
+			toolTip.append('h4')
+					.text(header);
 			    toolTip.append('p')
-			    	.text(textPart);
+			    	.text(text);
 				if (d3.event.pageX >= window.innerWidth / 2) {
 					toolTip
-						.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px');
+						.style('left', (d3.event.pageX) - WIDTH.largeMap * 3 / 5 + 'px');
 				}
 				else {
 					toolTip
 						.style('left', (d3.event.pageX) + 'px');
 				};
 				toolTip
-					.style('top', d3.event.pageY + 'px')
+					.style('top', (d3.event.pageY) - 200 + 'px')
 					.style('display', 'block');
+		}
+
+		// function that colours the country and shows the tooltip
+		function showInformation(wave, path, title, textPart) {
+			if (mainMap.attr('class') == 'wave ' + wave) {
+				highlightArea(path, wave);
+				showToolTip(title, textPart);
 			};
 		};
 
@@ -224,23 +271,7 @@ function InitVis() {
 				highlightArea(belgium, 'third-wave');
 				highlightArea(greatBritain, 'third-wave');
 				highlightArea(germany, 'third-wave');
-				// show tooltip
-				toolTip.append('h4')
-					.text('Western Europe')
-			    toolTip.append('p')
-			    	.text(popUpTexts.westernEurope);
-			    if (d3.event.pageX < window.innerWidth / 2) {
-					toolTip
-						.style('left', (d3.event.pageX) + 'px')
-						.style('top', (d3.event.pageY) + 'px');
-				};
-				if (d3.event.pageX >= window.innerWidth / 2) {
-					toolTip
-						.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
-						.style('top', (d3.event.pageY) + 'px');
-				};
-				toolTip
-					.style('display', 'block');
+				showToolTip('Western Europe', popUpTexts.westernEurope);
 			};
 		};
 
@@ -267,23 +298,7 @@ function InitVis() {
 				highlightArea(norway, 'third-wave');
 				highlightArea(finland, 'third-wave');
 				highlightArea(denmark, 'third-wave');
-				// show tooltip
-				toolTip.append('h4')
-					.text('Scandinavia');
-			    toolTip.append('p')
-			    	.text(popUpTexts.scandinavia);
-			    if (d3.event.pageX < window.innerWidth / 2) {
-					toolTip
-						.style('left', (d3.event.pageX) + 'px')
-						.style('top', (d3.event.pageY) + 'px');
-				};
-				if (d3.event.pageX >= window.innerWidth / 2) {
-					toolTip
-						.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
-						.style('top', (d3.event.pageY) + 'px');
-				};
-				toolTip
-					.style('display', 'block');
+				showToolTip('Scandinavia', popUpTexts.scandinavia);
 			};
 		};
 
@@ -311,23 +326,7 @@ function InitVis() {
 				highlightArea(yemen, 'first-wave');
 				highlightArea(oman, 'first-wave');
 				highlightArea(unitedArabEmirates, 'first-wave');
-				// show toolTip
-				toolTip.append('h4')
-					.text('Ethiopia and the Arabian Peninsula');
-			    toolTip.append('p')
-			    	.text(popUpTexts.arabPeninsula);
-			    if (d3.event.pageX < window.innerWidth / 2) {
-					toolTip
-						.style('left', (d3.event.pageX) + 'px')
-						.style('top', (d3.event.pageY) + 'px');
-				};
-				if (d3.event.pageX >= window.innerWidth / 2) {
-					toolTip
-						.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
-						.style('top', (d3.event.pageY) + 'px');
-				};
-				toolTip
-					.style('display', 'block');
+				showToolTip('Ethiopia and the Arabian Peninsula', popUpTexts.arabPeninsula);
 			};
 		};
 
@@ -354,6 +353,7 @@ function InitVis() {
 			coffeeCountries.forEach(function(country) {
 				// skip yemen and ethiopia because they will get the .on(mousover) later in the code, skip hawaii due to irrelevance
 				if (country != 'Yemen' && country != 'Ethiopia' && country != 'Hawaii') {
+					var introduction = countries[country]['Introduction'];
 					var tasteProfile = countries[country]['Taste profile'];
 					var varieties = countries[country]['Varieties'];
 					var production = countries[country]['Number of 60kg bags (2013)'];
@@ -366,6 +366,10 @@ function InitVis() {
 								.style('display', 'block');
 							toolTip.append('h4')
 								.text(country);
+							toolTip.append('h5')
+								.text('Introduction');
+							toolTip.append('p')
+								.text(introduction);
 							toolTip.append('h5')
 								.text('Taste profile');
 							toolTip.append('p')
@@ -381,14 +385,13 @@ function InitVis() {
 							if (d3.event.pageX < window.innerWidth / 2) {
 								toolTip
 									.style('left', (d3.event.pageX) + 'px')
-									.style('top', (d3.event.pageY) + 'px');
 							};
 							if (d3.event.pageX >= window.innerWidth / 2) {
 								toolTip
-									.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
-									.style('top', (d3.event.pageY) + 'px');
+									.style('left', (d3.event.pageX) - WIDTH.largeMap * 3 / 5 + 'px')
 							};
 							toolTip
+								.style('top', (d3.event.pageY) - 200 + 'px')
 								.style('display', 'block');
 						};
 					});
@@ -453,6 +456,7 @@ function InitVis() {
 			// on mouseover arabian peninsula and ethiopia
 			ethiopia.on('mouseover', function() {
 				if (mainMap.attr('class') == 'wave fourth-wave') {
+					var introduction = countries['Ethiopia']['Introduction'];
 					var tasteProfile = countries['Ethiopia']['Taste profile'];
 					var varieties = countries['Ethiopia']['Varieties'];
 					var production = countries['Ethiopia']['Number of 60kg bags (2013)'];
@@ -460,6 +464,10 @@ function InitVis() {
 					highlightArea(ethiopia, 'fourth-wave');
 					toolTip.append('h4')
 						.text('Ehtiopia');
+					toolTip.append('h5')
+						.text('Introduction');
+					toolTip.append('p')
+						.text(introduction);
 					toolTip.append('h5')
 						.text('Taste profile');
 					toolTip.append('p')
@@ -475,14 +483,13 @@ function InitVis() {
 					if (d3.event.pageX < window.innerWidth / 2) {
 						toolTip
 							.style('left', (d3.event.pageX) + 'px')
-							.style('top', (d3.event.pageY) + 'px');
 					};
 					if (d3.event.pageX >= window.innerWidth / 2) {
 						toolTip
-							.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
-							.style('top', (d3.event.pageY) + 'px');
+							.style('left', (d3.event.pageX) - WIDTH.largeMap * 3 / 5 + 'px')
 					};
 					toolTip
+						.style('top', (d3.event.pageY) - 200 + 'px')
 						.style('display', 'block');
 				};
 				showInformationArabPeninsula();
@@ -517,14 +524,13 @@ function InitVis() {
 					if (d3.event.pageX < window.innerWidth / 2) {
 						toolTip
 							.style('left', (d3.event.pageX) + 'px')
-							.style('top', (d3.event.pageY) + 'px');
 					};
 					if (d3.event.pageX >= window.innerWidth / 2) {
 						toolTip
-							.style('left', (d3.event.pageX) - WIDTH.largeMap / 2 + 'px')
-							.style('top', (d3.event.pageY) + 'px');
+							.style('left', (d3.event.pageX) - WIDTH.largeMap * 3 / 5 + 'px')
 					};
 					toolTip
+						.style('top', (d3.event.pageY) - 200 + 'px')
 						.style('display', 'block');
 					};
 				showInformationArabPeninsula();

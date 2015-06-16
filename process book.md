@@ -70,3 +70,9 @@ Today:
 - moreover, i want to change the highlighting on the map; instead of highlighting the mouseover-ed country, i want to make all the other ocuntries lighter grey. love it! Succeeded!!
 
 - managed to get the function working as well, turned out to have anything to do with callbacks and stuff like that, should have known. also managed to flip the popup when reacing the right part of the map, so thats good. will now try to change background colour of the pop up
+
+06.16.2015
+TODO:
+- turn svg's into buttons
+- see if i can give the countries their colour through an json file, and not through css
+- 

@@ -21,6 +21,10 @@
 	stroke-width: 1px;
 }*/
 
+#first-wave svg, #second-wave svg, #third-wave svg, #fourth-wave svg {
+	cursor: pointer;
+}
+
 .first-wave .code528, .first-wave .code250, .first-wave .code682, .first-wave .code512, .first-wave .code784, .first-wave .code887, .first-wave .code231 {
 	fill: #8c3500;
 }
@@ -38,9 +42,6 @@
 	fill: #8c3500;
 	/*fill: #8c510a;*/
 }
-/*.fourth-wave .code231, .fourth-wave .code404, .fourth-wave .code646, .fourth-wave .code894, .fourth-wave .code76, .fourth-wave .code188, .fourth-wave .code214, .fourth-wave .code320, .fourth-wave .code388, .fourth-wave .code588, .fourth-wave .code704 {
-	fill: #8b4c00;
-}*/
 
 .blanco .subunit{
 	fill: #aaaaaa;
@@ -54,23 +55,22 @@
 	left: 0;
 	right: 0;
 }
+
 .main-info {
 	display: none;
 }
-.main-info-box {
-	height: 200px;
-}
 
-.tooltip {
-	max-width: 35%;	
-	position: absolute;
+
+.tooltip, .maintexttip {
+	/*position: absolute;*/
 	text-align: center;
-	padding: 5px;
+	padding: 10px;
 	color: #dddddd;
 	background: #8c3500;
-	border: solid 1px #dddddd;
+	border: solid 1px #444;
 	border-radius: 8px;
-	display: inline-block;
+/*	display: inline-block;*/
 	opacity: 0.7;
 }
+
 
