@@ -21,3 +21,7 @@ a {
 .navbar {
 	opacity: 0.85;
 }
+
+.mouse-over-button {
+	background: #cccccc;
+}

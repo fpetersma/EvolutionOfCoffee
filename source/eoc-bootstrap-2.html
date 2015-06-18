@@ -22,7 +22,7 @@ Agency-style bootstrap source: http://ironsummitmedia.github.io/startbootstrap-a
 
     <!-- Custom fonts -->
     <link rel="stylesheet" type="text/css" href="eoc_svg.css" />
-<link rel="stylesheet" type="text/css" href="eoc_html.css" />
+    <link rel="stylesheet" type="text/css" href="eoc_html.css" />
 </head>
 
 <body <body id="page-top" class="index text-center">
@@ -121,17 +121,32 @@ Agency-style bootstrap source: http://ironsummitmedia.github.io/startbootstrap-a
     <section id="map">
         <div class="container container-map">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-md-12 text-center">
                     <h2 class="section-heading">the Map</h2>
+                    <h3 class="section-subheading text-muted">Hover over the countries to see more specific information.</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="dropdown">
+                    <button class="disabled col-md-2 btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Producing country
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li class="dropdown-header">Mouseover the countries</li>
+                    </ul>
+                </div>
+                <div class="col-md-10 text-center">
+                    <svg></svg>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
                     <button class="btn-lg btn disabled" role="button" id="info-btn">Tell me more about the wave!</button>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 map" id="map-main"></div>
+                <div class="col-md-12 map" id="map-main"></div>
             </div>
         </div>
     </section>

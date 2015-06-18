@@ -76,3 +76,12 @@ TODO:
 - turn svg's into buttons
 - see if i can give the countries their colour through an json file, and not through css
 - 
+
+06.18.2015
+
+Most of the things are done, but there are some things to do:
+
+- Instead of having made adjustments to the agency.css, i will try to write a different css-file that overwrites agency.css.
+- also, i will try to implement dropdown menus
+
+- the dropdown menu has ben implementend and lots of code have been deleted and replaced by formulas. i have not yet written a new css file, but maybe i will do that next week. the mvp is finished.
