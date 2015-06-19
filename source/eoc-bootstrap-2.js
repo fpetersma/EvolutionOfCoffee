@@ -89,7 +89,7 @@ function InitVis() {
 		var countries = topojson.feature(world, world.objects.countries).features;
 
   		// function to draw a map 
-    	function createMap(map, path) {
+    	function createMap(map, path, tag) {
     		map.append('path')
     			.datum(graticule)
 			    .attr('class', 'graticule')
@@ -105,14 +105,23 @@ function InitVis() {
 				.datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
 				.attr('class', 'boundary')
 				.attr('d', path);
+
+			map.append("defs").append("path")
+			    .datum({type: "Sphere"})
+			    .attr("id", "sphere" + tag)
+			    .attr("d", path);
+
+			map.append("use")
+			    .attr("class", "stroke")
+			    .attr("xlink:href", "#sphere" + tag);
     	};
 
     	// create the maps
-    	createMap(firstWave, pathSmall);
-    	createMap(secondWave, pathSmall);
-    	createMap(thirdWave, pathSmall);
-    	createMap(fourthWave, pathSmall);
-    	createMap(mainMap, pathLarge);
+    	createMap(firstWave, pathSmall, 'first');
+    	createMap(secondWave, pathSmall, 'second');
+    	createMap(thirdWave, pathSmall, 'third');
+    	createMap(fourthWave, pathSmall, 'fourth');
+    	createMap(mainMap, pathLarge, 'main');
 
 		// start the interactivity
 
@@ -123,6 +132,10 @@ function InitVis() {
 			d3.select('#info-btn').attr('class', 'btn-lg');
 			d3.select('#waves').selectAll('a').style('background-color', null);
 			d3.select('#' + wave).select('a').style('background-color', '#eeeeee');
+			// hide main texttip if needed
+			if (mainTextTip.style('display') == 'block') {
+				mainTextTip.style('display', 'none');
+			}
 		}
 
 		// when a wave is actually clicked
@@ -151,6 +164,7 @@ function InitVis() {
 
 		var mainTextTip = d3.select('.container-map').append('div')
 			.attr('class', 'maintexttip')
+			.attr('id', 'maintexttip')
 			.style('display', 'none')
 			.style('width', '1000px')
 			.style('margin-left', 'auto')

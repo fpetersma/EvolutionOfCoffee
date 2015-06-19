@@ -9,6 +9,12 @@
 	fill: none;
 }
 
+.stroke {
+  fill: none;
+  stroke: #444444;
+  stroke-width: .5px;
+}
+
 .subunit {
 	fill: #444444;
 }
