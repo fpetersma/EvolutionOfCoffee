@@ -104,6 +104,7 @@
 }
 
 .tooltip, .maintexttip {
+	font-family: FontAwesome;
 	pointer-events:none;
 	text-align: center;
 	padding: 10px;

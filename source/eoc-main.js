@@ -4,9 +4,7 @@
 
 'use strict';
 
-InitVis();
-
-function InitVis() {
+window.onload = function() {
 	// >>-------------------------------- initialise most of the variables --------------------------------<<
 
 	// constants
