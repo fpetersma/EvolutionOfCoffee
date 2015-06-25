@@ -20,13 +20,13 @@ MIT-license
 
 Felix Thomas Petersma
 
-Copyright (C) **2015 Felix Thomas Petersma**
+Copyright (C) *2015 Felix Thomas Petersma*
 
 ## Sources
 
 ### External code
 
-**It is import to note that external code might have been published under a different license.**
+*It is import to note that external code might have been published under a different license.*
 
 - Mike Bostock (http://bost.ocks.org/mike/, http://bl.ocks.org/mbostock/1087001, http://bost.ocks.org/mike/map/, )
 - D3 (http://d3js.org/)
