@@ -12,10 +12,10 @@ Agency-style bootstrap source: http://ironsummitmedia.github.io/startbootstrap-a
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Custom CSS by agency-creator -->
-    <link href="agency-creator/agency.css" rel="stylesheet">
+    <link href="agency_creator/agency.css" rel="stylesheet">
 
     <!-- Custom font by agency-creator -->
-    <link href="agency-creator/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="agency_creator/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" type="text/css" href="bootstrap-theme.css" />
     <link rel="stylesheet" type="text/css" href="bootstrap.css" />
@@ -126,12 +126,7 @@ Agency-style bootstrap source: http://ironsummitmedia.github.io/startbootstrap-a
                     <h3 class="section-subheading text-muted">Hover over the countries to see more specific information.</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <button class="btn-lg btn disabled" role="button" id="info-btn">Tell me more about the wave!</button>
-                </div>
-            </div>
-            <div class="row">
+            <div class="row row-map">
                 <div class="dropdown">
                     <button class="disabled col-md-2 btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         Producing country
@@ -143,6 +138,12 @@ Agency-style bootstrap source: http://ironsummitmedia.github.io/startbootstrap-a
                 </div>
                 <div class="col-md-10 text-center" id="map-main">
                     <svg></svg>
+                </div>
+            </div>
+            <div class="maintexttip-row col-md-12"></div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button class="btn-lg btn disabled" role="button" id="info-btn">Tell me more about the wave</button>
                 </div>
             </div>
         </div>
@@ -216,6 +217,8 @@ Agency-style bootstrap source: http://ironsummitmedia.github.io/startbootstrap-a
 
                         <h5>Japan's coffee culture</h5>
                         <text class="text-muted">(<a href="http://www.japantoday.com/category/opinions/view/japans-coffee-culture">http://www.japantoday.com/category/opinions/view/japans-coffee-culture</a>)</text>
+                        <h5>Boliva</h5>
+                        <text class="text-muted">(<a href="http://www.coffeehunter.com/green_coffees/european/bolivia">http://www.coffeehunter.com/green_coffees/european/bolivia</a>)</text>
                     </p>
                 </div>
             </div>
@@ -236,28 +239,28 @@ Agency-style bootstrap source: http://ironsummitmedia.github.io/startbootstrap-a
     </section>
 
     <!-- jQuery -->
-    <script src="agency-creator/jquery.js"></script>
+    <script src="agency_creator/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="agency-creator/bootstrap.min.js"></script>
+    <script src="agency_creator/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="agency-creator/jquery.easing.min.js"></script>
-    <script src="agency-creator/classie.js"></script>
-    <script src="agency-creator/cbpAnimatedHeader.js"></script>
+    <script src="agency_creator/jquery.easing.min.js"></script>
+    <script src="agency_creator/classie.js"></script>
+    <script src="agency_creator/cbpAnimatedHeader.js"></script>
 
     <!-- D3 JavaScript -->
-    <script src="d3.js"></script>
-    <script src="d3.geo.projection.v0.js"></script>
+    <script src="external_javascript/d3.js"></script>
+    <script src="external_javascript/d3.geo.projection.v0.js"></script>
 
     <!-- TopoJSON JavaScript -->
-    <script src="topojson.v1.js"></script>
+    <script src="external_javascript/topojson.v1.js"></script>
 
     <!-- Agency Theme JavaScript -->
-    <script src="agency-creator/agency.js"></script>
+    <script src="agency_creator/agency.js"></script>
 
     <!-- Country list in JavaScript -->
-    <script src="list_of_coffee_countries.js"></script>
+    <script src="data_lists.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="eoc-bootstrap-2.js"></script>

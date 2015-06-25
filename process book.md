@@ -1,4 +1,4 @@
-# The Report Document
+# The Process Book
 
 by: Felix Petersma
 
@@ -50,13 +50,13 @@ Today:
 
 - all of the text has been added to the code, and the popups work as I want them to. added the credits, that also worked out perfectly. The next step in the process is to work on the layout and the presentation of all the data, and to decide on whether i should add more different data. also, I will check on the correctness of the data, the information and the grammar. 
 
-06.11.2015
+## 06.11.2015
 
 - I have decided not to show statistics on the countries, next to the stories I wrote. Instead, i will use the fourth wave map to show for all the different coffee producing countries. also, today i will rewrite some text. 
 
 - i have created a json file, containing all the coffee producing countries and some information on them. This will be available in the fourth map. 
 
-06.12.2015
+## 06.12.2015
 
 - background source = http://pabloandrustys.com.au/images/uploads/PR-sustainability-feature.jpg
 
@@ -64,20 +64,19 @@ Today:
 
 - used http://www.coffeehunter.com/green_coffees/european/bolivia to get the varieties of bolivia, those were missing in the book.
 
-06.15.2015
+## 06.15.2015
 
 - at this point, the colours are not really working for me, so i think i will give every country a different colour, all similar colours to the ripe coffeeberries shown in the background image. moreover, for some reason, the showInformationArabPeninsula and clearInfoArabPeninsula fuction are not working properly when called upon inside the on.'mouseover' attribute of ethiopia and yemen. However, if i copy the funtions completely inside the on.'mouseover' attribute, it works perfectly... I need to figure out what is going on here. 
 - moreover, i want to change the highlighting on the map; instead of highlighting the mouseover-ed country, i want to make all the other ocuntries lighter grey. love it! Succeeded!!
 
 - managed to get the function working as well, turned out to have anything to do with callbacks and stuff like that, should have known. also managed to flip the popup when reacing the right part of the map, so thats good. will now try to change background colour of the pop up
 
-06.16.2015
+## 06.16.2015
 TODO:
 - turn svg's into buttons
 - see if i can give the countries their colour through an json file, and not through css
-- 
 
-06.18.2015
+## 06.18.2015
 
 Most of the things are done, but there are some things to do:
 
@@ -85,3 +84,12 @@ Most of the things are done, but there are some things to do:
 - also, i will try to implement dropdown menus
 
 - the dropdown menu has ben implementend and lots of code have been deleted and replaced by formulas. i have not yet written a new css file, but maybe i will do that next week. the mvp is finished.
+
+## 06.22.2015
+
+- after Jaap scrolled up and down a thousand times in my visualisation, clicked on everything there was and wasn't meant to be clicked on, we noticed a couple of bugs:
+1. The 'tell me more aobut the wave'-button did not change when the information was made visible. Fixed it.
+2. The popup did not follow the mouse when moving over a country. Now it does.
+3. Sometimes, some parts of the main story from a different wave remained visible wehen the 'tell me more aobut the wave' button was clicked. It does not happen anymore.
+4. Dropdown menu and some thing linked to it did not work properly. It now all works. 
+5. Jaap also suggested to give the container element smaller padding, which turned out to be a good idea.

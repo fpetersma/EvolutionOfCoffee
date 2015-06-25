@@ -7,27 +7,11 @@
 InitVis();
 
 function InitVis() {
+	// >>-------------------------------- initialise most of the variables --------------------------------<<
+
 	// constants
 	var HEIGHT = {smallMap: 120, largeMap: 600},
 		WIDTH = {smallMap: 200, largeMap: 1000};
-
-	// pieces of text that will be used to show as main information on the selected 'wave'
-	var mainTexts = {first: 'Long, long ago, in the far-away Ethiopian highlands, there lived a goatherd. His name was Kaldi, and one day he noticed his dancing and being unable to sleep at night after eating the berries from a certain plant. Kaldi told the abbot at the local monastery about his findings, and the abbot and the other monks started exploring this unique berry and its effects. Although this story is just a myth and can not be confirmed, coffee does originate from Ethiopia.',
-				 	second: 'After the discovery of the coffee in Ethiopia and it being cultived all over the world, coffee was almost indispensable in the daily routine of many people around the world. The coffee houses were places were people met to talk about all sorts of things, from day-to-day stuff to important strategic decisions. And although there were differences, almost all coffee made using a filtering technique; the roasted beans were grinded and the coffee was extracted using hot water. Espresso started growing in popularity around the world from around 1950, thereby ushering the second wave of coffee.',
-				 	third: 'Initialised by Starbucks around 1990, more and more companies started direct-trading with farmers to ensure the highest possible quality of the coffee and to find and create particular flavours. People started focussing on the origin of a coffee, how it was processed, what region it was from and what variety it was. Coffee was no longer only being traded on a single Coffea Arabica market for a single price; over 40 different varietes have already been discovered, and still new varietiens are discovered or created, all with their own unique charactaristics. With all this focus for detail about the bean and the processes that were involved, also came a new interest in extraction methods. Espresso, although still by far the most sold coffee in coffeehouses today, was not the only way to make coffee anymore. New techniques were discovered and old ones were being used again. The new focus on \'filter coffees\' also let to new ways of roasting; where, in general, an espresso roast is pretty dark, in order bring out the sweetness and bitterness in coffee (the high pressure of an espresso machine increase the level of acidity in coffee, so this needs to be balanced out), a filter coffee roast could be lighter, fruitier and greener. Most filter methods do not use any form of pressure, thus leading to a calmer extraction, and very little distorted flavours.',
-				 	fourth: 'Coffee has always been a very popular drink, one of the most popular in the world, in fact. What is different now, compared to before, is not just the focus on a very unique cup of coffee; it is also the focus on letting people experience it outside of the usual coffee bars and roasteries, at places such as large events or at home. This change in attitude towards coffee might be the beginning of the fourth wave; a period where it is not just about creating the \'best coffee\', but about exploring all the different flavours that are available, what different roasts do to different coffees, what extraction techniques result in what flavours, and sharing this knowledge with the rest of the world, not just with the hipsters at the coffeebars. For this wave, the map will show something different: for every coffee producing country, information is available on the varieties that are common and what flavour characteristics are unique for the area.' };
-
-	// pieces of text that will be used to put in the toolTip on mouseover a specific country
-	var popUpTexts = {netherlands: 'Because the Arabs only sold roasted beans, the Netherlands, among other European countries, were not able to cultivate coffee themselves. This monopoly came to an end when a trader from the Dutch East Indian Company, Pieter van der Broecke, managed to \'obtain\' (some sources say \'steal\') some coffee plants from Yemen in 1616. These plants grew so well in the Amsterdam Botanical Gardens, that in 1658 the first \'Coffea Arabica\' was being cultivated in Ceylon(Sri Lanka) and not much later also in other Dutch colonies, such as India, Java (Indonesia) and Suriname. ',
-					 france: 'Although the Dutch were the first to cultivate coffee outside of the Arabian Peninsula, the French were the ones who exported it to biggest coffee-producing country in the world, Brazil. Back in 1714, the Mayor of Amsterdam gave King Louise XIV of France a coffee plant, as a present to grow in the Paris Royal Botanical Gardens. Some of the seeds of this plant were taken by Gabriel de Clieu in 1723 and brought to Martinique, one of the French colonies at that time. Most of the coffee that is being grown in Middle and Southern America today originates from those seeds. ',
-					 arabPeninsula: 'After its discovery in Ethiopia, the Arabs were the first to cultivate and trade coffee. This was around 14th century, and for next couple of hundred years, the Arabs held a monopoly on coffeetrade. In the 15th century it was mainly grown in the Yemeni district of Arabia, but by the 16th century coffee was being drunk in Persia, Turkey, Egypt and Syria. This also led to the creation of the first coffee houses, of which the first one was reported to be located at Constantinopel in 1475, and was called \'Kiva Han\'.',
-					 italy: 'An espresso was made with a different technique. A small amount of water was pushed through coffeegrounds. This technique was first patented by Angelo Moriono in Turin in 1884, and the espresso machine has been perfected ever after. Espresso was a very popular drink, not just because the drink itself, but also because the variations that came with it, such as the cappuccino, which is an espresso with foamed milk. This version was particulary popular outside of Italy itself, mainly in Gread Britain. In Italy, espresso was a beverage for the working-class, and the price of a single espresso, if you were standing at the bar while drinking it, was being regulated by the government, and thus keeping it very, very affordable.',
-					 unitedStatesSecond: 'Although espresso was already known in the United States, it wasn\'t a well known drink until the 1990\'s. From 1820 until then, coffee had been the most popular drink in the United States, but nobody had given much care to the production of it. As long as it had a lot of caffeine in it and kept you awake, it did not really matter how it tasted. There even was instant-coffee (not just in the United States, most coffee drinkers around the world did not care much for the flavour or origin of coffee). All of this changed when Howard Schultz came to Starbucks in 1982. Howard Schultz, inspired by the Italian espresso culture, introduced espresso and lots of different espresso-based drinks. The success this has brought Starbucks has been immense, quickly conquering the US and most of Western Europe. Starbucks also introduced something important; they were the first who started direct-trading with the farmers at a global scale. Instead of buying their coffee on world market for coffee, they started paying more for a certain variation of coffee, grown at a specific farm in a specific region of a specific country, and working together with the farmers to create, in their eyes, a perfect coffeebean.',
-					 westernEurope: 'A very experimental coffee culture, similar to the Scandinavian culture. Some people use more Australian roasts, some use more Scandinavian roasts, although the main trend lies more towards the lighter, Nordic roasts. The coffee culture is in a very developed stadium here. Every (major) city has lots of coffeehouses, and there are different kind of places for different needs; from small roasteries with a unique single origin from Rwanda to large chains such as Starbucks. There is a huge focus on quality and consistency; there are places, mainly in London, where they weight every shot of espresso (in and out) that they make.',
-					 scandinavia: 'All of Scandinavia has been very active in the third coffee wave. Typical for the \'Scandinavian\' or \'Nordic\' roast is that it is in general a very light roast, were filtercoffee beans are barely being roasted after the \'the first crack\'. This is the moment in the roasting process where the first gasses escape from beans, thereby causing them to, quite literally, crack. ',
-					 japan: 'Although Japan\'s coffee culture has existed since a Dutch man brought it to Nagasaki in the 19th century, it did not really boom until the 1970\'s. Since then, it has grown explosively, with lots of coffeehouses being opened. Too of the biggest players in the filter coffee market, Hario and Kalita, originate from Japan. ',
-					 unitedStatesThird: 'Although Starbucks was, and still is, by far the biggest player in the specialty coffee, they did remain focussed on espresso-based coffees, especially the flavoured and frozen specials, instead of also joining the renewed interest in filter coffees. This left room for smaller business to fill this market, of which some by now have grown to chains themselves, such as Intelligentsia Coffee in Chicago and Blue Bottle Coffee in Oakland. Typical for the American coffee culture are the large pots or tanks of filtercoffee from which you can pull your own cup of coffee, and the usually very large sizes. Also, in 1982, the Specialty Coffee Association of America was founded, and they were the first to create a grading scheme to decide on whether a particular coffee was a \'specialty coffee\'.',
-					 australia: 'Australia is the country were they \'invented\' the flat white; an espresso-based beverage, similar to latte, but with less milk, thus having a espresso-to-milk ratio somewhere between a latte and a cortado. Where the American coffee culture focuses on large amounts of coffee, the Australian coffee culture focusses on single, smaller cups of coffee, making one coffee at the time. In this way this culture is similar to the European culture, although the Australians tend to using darker roasts, especially compared to Scaninavia.'};
 
 	// create svg for first wave
 	var firstWave = d3.select('#first-wave').select('svg')
@@ -84,8 +68,10 @@ function InitVis() {
 
 	var graticule = d3.geo.graticule();
 
+	// >>--------------------------------- first import: map data, and create the maps ------------------------------<<
+
 	// load the json data of the world map
-	d3.json('world-50m.json', function(error, world) {
+	d3.json('data_files/world-50m.json', function(error, world) {
 		var countries = topojson.feature(world, world.objects.countries).features;
 
   		// function to draw a map 
@@ -114,7 +100,7 @@ function InitVis() {
 			map.append("use")
 			    .attr("class", "stroke")
 			    .attr("xlink:href", "#sphere" + tag);
-    	};
+    	}
 
     	// create the maps
     	createMap(firstWave, pathSmall, 'first');
@@ -123,7 +109,7 @@ function InitVis() {
     	createMap(fourthWave, pathSmall, 'fourth');
     	createMap(mainMap, pathLarge, 'main');
 
-		// start the interactivity
+		// >>------------------------------ start the interactivity --------------------------------------------<<
 
 		// create function for when a wave is selected
 		function showForWave(wave, text) {
@@ -136,6 +122,9 @@ function InitVis() {
 			if (mainTextTip.style('display') == 'block') {
 				mainTextTip.style('display', 'none');
 			}
+			// clear main texttip
+			$('.maintexttip').empty();
+			d3.select('#info-btn').text('Tell me more about the wave');
 		}
 
 		// when a wave is actually clicked
@@ -162,53 +151,40 @@ function InitVis() {
 			.style('display', 'none')
 			.style('max-width', WIDTH.largeMap * 3 / 5 + 'px');
 
-		var mainTextTip = d3.select('.container-map').append('div')
+		// create div for main text tip
+		var mainTextTip = d3.select('.maintexttip-row')
 			.attr('class', 'maintexttip')
 			.attr('id', 'maintexttip')
 			.style('display', 'none')
-			.style('width', '1000px')
+			.style('width', '100%')
+			.style('max-width', '1000px')
 			.style('margin-left', 'auto')
 			.style('margin-right', 'auto')
 			.style('right', 0)
 			.style('left', 0)
 			
+		function fillMainTextTip(text) {
+			mainTextTip.append('p')
+    			.text(text);
+    		mainTextTip
+    			.style('display', 'block');
+    		d3.select('#info-btn').text('Hide information');
+		}
 
 		// show main-info text as sort-of pop up if button is clicked
     	d3.select('#info-btn').on('click', function() {
-
     		if (mainTextTip.style('display') == 'block') {
     			$('.maintexttip').empty();
     			mainTextTip.style('display', 'none');
+    			d3.select('#info-btn').text('Tell me more about the wave');
     		}
-
-    		else if (mainMap.attr('class') == 'wave first-wave') {
-    			mainTextTip.append('p')
-    				.text(mainTexts.first);
-    			mainTextTip
-    				.style('display', 'block');
-    		}
-
-    		else if (mainMap.attr('class') == 'wave second-wave') {
-    			mainTextTip.append('p')
-    				.text(mainTexts.second)
-    			mainTextTip
-    				.style('display', 'block');
-    		}
-
-    		else if (mainMap.attr('class') == 'wave third-wave') {
-    			mainTextTip.append('p')
-    				.text(mainTexts.third)
-    			mainTextTip
-    				.style('display', 'block');
-    		}
-
-    		else if (mainMap.attr('class') == 'wave fourth-wave') {
-    			mainTextTip.append('p')
-    				.text(mainTexts.fourth)
-    			mainTextTip
-    				.style('display', 'block');
-    		};
+    		else if (mainMap.attr('class') == 'wave first-wave') {fillMainTextTip(mainTexts.first)}
+    		else if (mainMap.attr('class') == 'wave second-wave') {fillMainTextTip(mainTexts.second)}
+    		else if (mainMap.attr('class') == 'wave third-wave') {fillMainTextTip(mainTexts.third)}
+    		else if (mainMap.attr('class') == 'wave fourth-wave') {fillMainTextTip(mainTexts.fourth)}
     	});
+
+    	// >>------------- create the paths to, and the functions for the interactivity with the countries -------------<<
 
 		// selection paths to all the countries
 		var france = mainMap.select('.code250'),
@@ -239,15 +215,11 @@ function InitVis() {
 				.attr('class', 'wave ' + wave + ' blanco')
 			area
 				.style('fill', '#8c3500');	
-		};
+		}
 
-		function showToolTip(header, text) {
-			// add header and text to tooltip
-			toolTip.append('h4')
-					.text(header);
-		    toolTip.append('p')
-		    	.text(text);
-		    // location of tooltip, flip if on right side
+		// change coordinates of tooltip, visible or not, according to mouse coordinates
+		mainMap.on('mousemove', function() {
+			// location of tooltip, flip if on right side
 			if (d3.event.pageX >= window.innerWidth / 2) {
 				toolTip
 					.style('left', (d3.event.pageX) - WIDTH.largeMap * 3 / 5 + 'px');
@@ -255,9 +227,17 @@ function InitVis() {
 			else {
 				toolTip
 					.style('left', (d3.event.pageX) + 'px');
-			};
-			toolTip
-				.style('top', (d3.event.pageY) - 200 + 'px')
+			}
+			toolTip.style('top', (d3.event.pageY) - 150 + 'px');
+		});
+
+		function showToolTip(header, text) {
+			// add header and text to tooltip
+			toolTip.append('h4')
+				.text(header);
+		    toolTip.append('p')
+		    	.text(text);
+		    toolTip
 				.style('display', 'block');
 		}
 
@@ -266,21 +246,18 @@ function InitVis() {
 			if (mainMap.attr('class') == 'wave ' + wave) {
 				highlightArea(path, wave);
 				showToolTip(title, textPart);
-			};
-		};
+			}
+		}
 
 		// function that clears the map on mouseout
-		function clearInformation(wave, path) {
-			if (mainMap.attr('class') == 'wave ' + wave + ' blanco') {
-				path
-					.style('fill', null)
-				mainMap
-					.attr('class', 'wave ' + wave)
+		function clearInformation() { {
+				d3.selectAll('.subunit').style('fill', null)
+				mainMap.classed('blanco', false)
 				// remove all elements inside the tooltip
 				$('.tooltip').empty();
 				toolTip.style('display', 'none');
-			};
-		};
+			}
+		}
 
 		// function that colours the country and shows the tooltip for western europe
 		function showInformationWesternEurope() {
@@ -289,21 +266,8 @@ function InitVis() {
 					highlightArea(area, 'third-wave')
 				});
 				showToolTip('Western Europe', popUpTexts.westernEurope);
-			};
-		};
-
-		// function that clears the map on mouseout for western europe
-		function clearInformationWesternEurope() {
-			if (mainMap.attr('class') == 'wave third-wave blanco') {
-				mainMap
-					.attr('class', 'wave third-wave')
-				westernEurope.forEach(function(area) {
-					area.style('fill', null);
-				})
-				toolTip.style('display', 'none');
-				$('.tooltip').empty();
-			};
-		};
+			}
+		}
 
 		// function that colours the country and shows the tooltip for scandinavia
 		function showInformationScandinavia() {
@@ -312,21 +276,8 @@ function InitVis() {
 					highlightArea(area, 'third-wave')
 				})
 				showToolTip('Scandinavia', popUpTexts.scandinavia);
-			};
-		};
-
-		// function that clears the map on mouseout for scandinavia
-		function clearInformationScandinavia() {
-			if (mainMap.attr('class') == 'wave third-wave blanco') {
-				mainMap
-					.attr('class', 'wave third-wave')
-				scandinavia.forEach(function(area) {
-					area.style('fill', null);
-				})
-				toolTip.style('display', 'none');
-				$('.tooltip').empty();
-			};
-		};
+			}
+		}
 
 		// function that colours the country and shows the tooltip for the arabian peninsula
 		function showInformationArabPeninsula() {
@@ -335,21 +286,8 @@ function InitVis() {
 					highlightArea(area, 'first-wave')
 				});
 				showToolTip('Ethiopia and the Arabian Peninsula', popUpTexts.arabPeninsula);
-			};
-		};
-
-		// function that clears the map on mouseout for the arabian peninsula
-		function clearInformationArabPeninsula() {
-			if (mainMap.attr('class') == 'wave first-wave blanco') {
-				mainMap
-					.attr('class', 'wave first-wave');
-				arabPeninsulaAndEthiopia.forEach(function(area) {
-					area.style('fill', null);
-				});
-				toolTip.style('display', 'none');
-				$('.tooltip').empty();
-			};
-		};
+			}
+		}
 
 		// function to create the tooltip for the fourth wave
 		function showToolTip2(path, country, introduction, tasteProfile, varieties, production) {
@@ -399,26 +337,45 @@ function InitVis() {
 
 			// link information to tooltip
 			d3.select('.dropdown-menu').append('li')
+				.attr('class', 'dropdown-menu-input')
 				.text(country)
-				.on('mouseover', function()  {
-					showToolTip2(path, country, introduction, tasteProfile, varieties, production)
-					d3.select(this).classed('mouse-over-button', true)
+				.on('mouseover', function() {
+					// showToolTip2(path, country, introduction, tasteProfile, varieties, production)
+					d3.select(this).classed('mouse-over-button', true);
 				})
 				.on('mouseout', function() {
-					clearInformation('fourth-wave', path);
-					d3.select(this).classed('mouse-over-button', false)
+					// clearInformation('fourth-wave', path);
+					d3.select(this).classed('mouse-over-button', false);
+				})
+				.on('click', function() {
+					if (toolTip.style('display') == 'block') {clearInformation('fourth-wave', path)}
+					else {showToolTip2(path, country, introduction, tasteProfile, varieties, production)}
 				});
+				// stop collapsing of dropdown menu if a country is clicked, only collapse if menu header is clicked
+				$('.dropdown-menu-input').click(function(e) {
+            		e.stopPropagation()});
 
 			// show tooltip on mouseover country
 			path.on('mouseover', function() {
 				if (mainMap.attr('class') == 'wave fourth-wave') {
 					showToolTip2(path, country, introduction, tasteProfile, varieties, production);
-				};
+				}
 			});
-		};
+		}
+		// werkt nog niet , ene landje blijft nog hangen.
+		d3.select('body').on('click', function() {
+			if (d3.select('#dropdownMenu1').attr('aria-expanded') == 'true' && mainMap.attr('class') == 'wave fourth-wave blanco') {
+				$('.tooltip').empty();
+				toolTip.style('display', 'none');
+				mainMap.classed('blanco', false);
+				d3.selectAll('.subunit').style('fill', null)
+			}
+		})
+
+		// >>--------------- import second data set and add the event listeners to the countries ----------------<<
 
 		// import the data for coffee producing countries to add to the fourth wave map
-		d3.json('coffee_countries.json', function(error, data) {
+		d3.json('data_files/coffee_countries.json', function(error, data) {
 			var countries = data['Coffee Producing Countries'];
 			coffeeCountries.forEach(function(country) {
 				// skip yemen and ethiopia because they will get the .on(mousover) later in the code, skip hawaii due to irrelevance
@@ -428,60 +385,46 @@ function InitVis() {
 					path.on('mouseout', function() {
 						clearInformation('fourth-wave', path);
 					});
-				};
+				}
 			});
 
 			// on mouseover france
 			france.on('mouseover', function() {
 				showInformation('first-wave', france, 'France', popUpTexts.france);
 			});
-			france.on('mouseout', function() {
-				clearInformation('first-wave', france);
-			});
+			france.on('mouseout', clearInformation);
 
 			// on mouseover united states
 			unitedStates.on('mouseover', function() {
 				showInformation('second-wave', unitedStates, 'United States', popUpTexts.unitedStatesSecond);
 				showInformation('third-wave', unitedStates, 'United States', popUpTexts.unitedStatesThird);
 			});
-			unitedStates.on('mouseout', function() {
-				clearInformation('second-wave', unitedStates);
-				clearInformation('third-wave', unitedStates);		
-			});
+			unitedStates.on('mouseout', clearInformation);
 
 			// on mouseover italy
 			italy.on('mouseover', function() {
 				showInformation('second-wave', italy, 'Italy', popUpTexts.italy);
 			});
-			italy.on('mouseout', function() {
-				clearInformation('second-wave', italy);
-			});
+			italy.on('mouseout', clearInformation);
 
 			// on mouseover japan
 			japan.on('mouseover', function() {
 				showInformation('third-wave', japan, 'Japan', popUpTexts.japan);
 			});
-			japan.on('mouseout', function() {
-				clearInformation('third-wave', japan);	
-			});
+			japan.on('mouseout', clearInformation);
 
 			// on mouseover australia
 			australia.on('mouseover', function() {
 				showInformation('third-wave', australia, 'Australia', popUpTexts.australia);
 			});
-			australia.on('mouseout', function() {
-				clearInformation('third-wave', australia);	
-			});
+			australia.on('mouseout', clearInformation);
 
 			// on mouseover netherlands
 			netherlands.on('mouseover', function(westernEurope) {
 				showInformationWesternEurope(westernEurope);
 				showInformation('first-wave', netherlands, 'The Netherlands', popUpTexts.netherlands);
 			});
-			netherlands.on('mouseout', function(westernEurope) {
-				clearInformationWesternEurope(westernEurope);
-				clearInformation('first-wave', netherlands);
-			});
+			netherlands.on('mouseout', clearInformation);
 
 			// on mouseover arabian peninsula and ethiopia
 			ethiopia.on('mouseover', function() {
@@ -493,10 +436,7 @@ function InitVis() {
 				showInformationArabPeninsula();
 			});
 			
-			ethiopia.on('mouseout', function() {
-				clearInformation('fourth-wave', ethiopia);
-				clearInformationArabPeninsula();
-			});
+			ethiopia.on('mouseout', clearInformation);
 
 			yemen.on('mouseover', function() {
 				if (mainMap.attr('class') == 'wave fourth-wave') {
@@ -506,46 +446,37 @@ function InitVis() {
 				}
 				showInformationArabPeninsula();
 			});
-			yemen.on('mouseout', function() {
-				clearInformation('fourth-wave', yemen);
-				clearInformationArabPeninsula();
-			});
+			yemen.on('mouseout', clearInformation);
 
 			saoudiArabia.on('mouseover', showInformationArabPeninsula);
-			saoudiArabia.on('mouseout', clearInformationArabPeninsula);
+			saoudiArabia.on('mouseout', clearInformation);
 
 			oman.on('mouseover', showInformationArabPeninsula);
-			oman.on('mouseout', clearInformationArabPeninsula);
+			oman.on('mouseout', clearInformation);
 
 			unitedArabEmirates.on('mouseover', showInformationArabPeninsula);
-			unitedArabEmirates.on('mouseout', clearInformationArabPeninsula);
+			unitedArabEmirates.on('mouseout', clearInformation);
 
 			scandinavia.forEach(function(area) {
 				area.on('mouseover', showInformationScandinavia);
-				area.on('mouseout', clearInformationScandinavia);
+				area.on('mouseout', clearInformation);
 			});
 
 			// on mouseover western europe
 			greatBritain.on('mouseover', function() {
 				showInformationWesternEurope();
 			});
-			greatBritain.on('mouseout', function() {
-				clearInformationWesternEurope();
-			});
+			greatBritain.on('mouseout', clearInformation);
 
 			germany.on('mouseover', function() {
 				showInformationWesternEurope()
 			});
-			germany.on('mouseout', function() {
-				clearInformationWesternEurope()
-			});
+			germany.on('mouseout', clearInformation);
 
 			belgium.on('mouseover', function() {
 				showInformationWesternEurope();
 			});
-			belgium.on('mouseout', function() {
-				clearInformationWesternEurope();
-			});
+			belgium.on('mouseout', clearInformation);
 		});
 	});
-};
+}

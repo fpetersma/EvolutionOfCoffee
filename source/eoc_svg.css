@@ -103,11 +103,8 @@
 	right: 0;
 }
 
-.main-info {
-	display: none;
-}
-
 .tooltip, .maintexttip {
+	pointer-events:none;
 	text-align: center;
 	padding: 10px;
 	color: #dddddd;

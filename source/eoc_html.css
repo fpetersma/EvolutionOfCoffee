@@ -18,6 +18,10 @@ a {
 	outline: none;
 }
 
+section {
+	padding: 50px;
+}
+
 .navbar {
 	opacity: 0.85;
 }
